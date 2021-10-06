@@ -1,5 +1,9 @@
 <template>
-  <hello-world />
+  <div>
+    <hello-world />
+
+    <hello-world />
+  </div>
 </template>
 
 <script>
