@@ -774,6 +774,14 @@
     "@babel/helper-create-regexp-features-plugin" "^7.14.5"
     "@babel/helper-plugin-utils" "^7.14.5"
 
+"@babel/polyfill@^7.4.4":
+  version "7.12.1"
+  resolved "https://registry.yarnpkg.com/@babel/polyfill/-/polyfill-7.12.1.tgz#1f2d6371d1261bbd961f3c5d5909150e12d0bd96"
+  integrity sha512-X0pi0V6gxLi6lFZpGmeNa4zxtwEmCs42isWLNjZZDE0Y8yVfgu0T2OAHlzBbdYlqbW/YXVvoBHpATEM+goCj8g==
+  dependencies:
+    core-js "^2.6.5"
+    regenerator-runtime "^0.13.4"
+
 "@babel/preset-env@^7.11.0":
   version "7.15.6"
   resolved "https://registry.yarnpkg.com/@babel/preset-env/-/preset-env-7.15.6.tgz#0f3898db9d63d320f21b17380d8462779de57659"
@@ -902,6 +910,35 @@
   dependencies:
     "@babel/helper-validator-identifier" "^7.14.9"
     to-fast-properties "^2.0.0"
+
+"@fortawesome/fontawesome-common-types@^0.2.36":
+  version "0.2.36"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-common-types/-/fontawesome-common-types-0.2.36.tgz#b44e52db3b6b20523e0c57ef8c42d315532cb903"
+  integrity sha512-a/7BiSgobHAgBWeN7N0w+lAhInrGxksn13uK7231n2m8EDPE3BMCl9NZLTGrj9ZXfCmC6LM0QLqXidIizVQ6yg==
+
+"@fortawesome/fontawesome-free@5.15.3":
+  version "5.15.3"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-free/-/fontawesome-free-5.15.3.tgz#c36ffa64a2a239bf948541a97b6ae8d729e09a9a"
+  integrity sha512-rFnSUN/QOtnOAgqFRooTA3H57JLDm0QEG/jPdk+tLQNL/eWd+Aok8g3qCI+Q1xuDPWpGW/i9JySpJVsq8Q0s9w==
+
+"@fortawesome/fontawesome-svg-core@^1.2.36":
+  version "1.2.36"
+  resolved "https://registry.yarnpkg.com/@fortawesome/fontawesome-svg-core/-/fontawesome-svg-core-1.2.36.tgz#4f2ea6f778298e0c47c6524ce2e7fd58eb6930e3"
+  integrity sha512-YUcsLQKYb6DmaJjIHdDWpBIGCcyE/W+p/LMGvjQem55Mm2XWVAP5kWTMKWLv9lwpCVjpLxPyOMOyUocP1GxrtA==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.36"
+
+"@fortawesome/free-solid-svg-icons@^5.15.4":
+  version "5.15.4"
+  resolved "https://registry.yarnpkg.com/@fortawesome/free-solid-svg-icons/-/free-solid-svg-icons-5.15.4.tgz#2a68f3fc3ddda12e52645654142b9e4e8fbb6cc5"
+  integrity sha512-JLmQfz6tdtwxoihXLg6lT78BorrFyCf59SAwBM6qV/0zXyVeDygJVb3fk+j5Qat+Yvcxp1buLTY5iDh1ZSAQ8w==
+  dependencies:
+    "@fortawesome/fontawesome-common-types" "^0.2.36"
+
+"@fortawesome/vue-fontawesome@^2.0.2":
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/@fortawesome/vue-fontawesome/-/vue-fontawesome-2.0.2.tgz#5b86cd2fb7b4c17e5dede722c1c2855c97eceaea"
+  integrity sha512-ecpKSBUWXsxRJVi/dbOds4tkKwEcBQ1JSDZFzE2jTFpF8xIh3OgTX8POIor6bOltjibr3cdEyvnDjecMwUmxhQ==
 
 "@hapi/address@2.x.x":
   version "2.1.4"
@@ -2771,6 +2808,11 @@ core-js-compat@^3.16.0, core-js-compat@^3.16.2, core-js-compat@^3.6.5:
     browserslist "^4.17.3"
     semver "7.0.0"
 
+core-js@^2.6.5:
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/core-js/-/core-js-2.6.12.tgz#d9333dfa7b065e347cc5682219d6f690859cc2ec"
+  integrity sha512-Kb2wC0fvsWfQrgk8HU5lW6U/Lcs8+9aaYcy4ZFc6DDlo4nZ7n70dEgE5rtR0oG6ufKDUnrwfWL1mXR5ljDatrQ==
+
 core-js@^3.6.5:
   version "3.18.2"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.18.2.tgz#63a551e8a29f305cd4123754846e65896619ba5b"
@@ -3128,6 +3170,11 @@ deepmerge@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-1.5.2.tgz#10499d868844cdad4fee0842df8c7f6f0c95a753"
   integrity sha512-95k0GDqvBjZavkuvzx/YqVLv/6YYa17fz6ILMSf7neqQITCPbnfEnQvEgMPNjH4kgobe7+WIL0yJEHku+H3qtQ==
+
+deepmerge@^4.2.2:
+  version "4.2.2"
+  resolved "https://registry.yarnpkg.com/deepmerge/-/deepmerge-4.2.2.tgz#44d2ea3679b8f4d4ffba33f03d865fc1e7bf4955"
+  integrity sha512-FJ3UgI4gIl+PHZm53knsuSFpE+nESMr7M4v9QcgB7S63Kj/6WqMiFQJpBBYz1Pt+66bZpP3Q7Lye0Oo9MPKEdg==
 
 default-gateway@^4.2.0:
   version "4.2.0"
@@ -6096,13 +6143,13 @@ nth-check@^2.0.0:
   dependencies:
     boolbase "^1.0.0"
 
-null-loader@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/null-loader/-/null-loader-3.0.0.tgz#3e2b6c663c5bda8c73a54357d8fa0708dc61b245"
-  integrity sha512-hf5sNLl8xdRho4UPBOOeoIwT3WhjYcMUQm0zj44EhD6UscMAz72o2udpoDFBgykucdEDGIcd6SXbc/G6zssbzw==
+null-loader@^4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/null-loader/-/null-loader-4.0.1.tgz#8e63bd3a2dd3c64236a4679428632edd0a6dbc6a"
+  integrity sha512-pxqVbi4U6N26lq+LmgIbB5XATP0VdZKOG25DhHi8btMmJJefGArFyDg1yc4U3hWCJbMqSrw0qyrz1UQX+qYXqg==
   dependencies:
-    loader-utils "^1.2.3"
-    schema-utils "^1.0.0"
+    loader-utils "^2.0.0"
+    schema-utils "^3.0.0"
 
 num2fraction@^1.2.2:
   version "1.2.2"
@@ -7462,6 +7509,11 @@ ripemd160@^2.0.0, ripemd160@^2.0.1:
     hash-base "^3.0.0"
     inherits "^2.0.1"
 
+roboto-fontface@*:
+  version "0.10.0"
+  resolved "https://registry.yarnpkg.com/roboto-fontface/-/roboto-fontface-0.10.0.tgz#7eee40cfa18b1f7e4e605eaf1a2740afb6fd71b0"
+  integrity sha512-OlwfYEgA2RdboZohpldlvJ1xngOins5d7ejqnIBWr9KaMxsnBqotpptRXTyfNRLnFpqzX6sTDt+X+a+6udnU8g==
+
 run-async@^2.4.0:
   version "2.4.1"
   resolved "https://registry.yarnpkg.com/run-async/-/run-async-2.4.1.tgz#8440eccf99ea3e70bd409d49aab88e10c189a455"
@@ -7513,7 +7565,7 @@ sass-graph@2.2.5:
     scss-tokenizer "^0.2.3"
     yargs "^13.3.2"
 
-sass-loader@^10.0.0:
+sass-loader@^10.1.1:
   version "10.2.0"
   resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-10.2.0.tgz#3d64c1590f911013b3fa48a0b22a83d5e1494716"
   integrity sha512-kUceLzC1gIHz0zNJPpqRsJyisWatGYNFRmv2CKZK2/ngMJgLqxTbXwe/hJ85luyvZkgqU3VlJ33UVF2T/0g6mw==
@@ -7524,7 +7576,7 @@ sass-loader@^10.0.0:
     schema-utils "^3.0.0"
     semver "^7.3.2"
 
-sass@~1.32.0:
+sass@~1.32:
   version "1.32.13"
   resolved "https://registry.yarnpkg.com/sass/-/sass-1.32.13.tgz#8d29c849e625a415bce71609c7cf95e15f74ed00"
   integrity sha512-dEgI9nShraqP7cXQH+lEXVf73WOPCse0QlFzSD8k+1TcOxCMwVXfQlr0jtoluZysQOyJGnfr21dLvYKDJq8HkA==
@@ -8718,12 +8770,12 @@ vm-browserify@^1.0.1:
   resolved "https://registry.yarnpkg.com/vm-browserify/-/vm-browserify-1.1.2.tgz#78641c488b8e6ca91a75f511e7a3b32a86e5dda0"
   integrity sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==
 
-vue-cli-plugin-vuetify@~2.4.2:
-  version "2.4.2"
-  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.4.2.tgz#f5c54a853cd5b06633da4a508ff4aa5b6b6275e0"
-  integrity sha512-aJXkzz3CbN/D1/aJ53slsp8hGaruQHhj/mkNjsfpkqhGglLex7UBnvcDwi5+D1tNk+XlddANLgRe9tmCFMorVA==
+vue-cli-plugin-vuetify@~2.4.3:
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/vue-cli-plugin-vuetify/-/vue-cli-plugin-vuetify-2.4.3.tgz#68a893642b354ed8d534e4a9bc63d0728a8987ac"
+  integrity sha512-dT9KpH1rXT6UWzBDFLMB69sgrNCoWFcxWiIyDDZ4vikv85JDweMHh2dT5n6QaAt7qsGlvL4IMOopjcyUTiPW9g==
   dependencies:
-    null-loader "^3.0.0"
+    null-loader "^4.0.1"
     semver "^7.1.2"
     shelljs "^0.8.3"
 
@@ -8805,7 +8857,7 @@ vuetify-loader@^1.7.0:
     file-loader "^6.2.0"
     loader-utils "^2.0.0"
 
-vuetify@^2.4.0:
+vuetify@^2.5.9:
   version "2.5.9"
   resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-2.5.9.tgz#b6e6d9fff4a1691858f3415eceb2a75ca706d211"
   integrity sha512-rQaa8MDxnv449l+XCmFCN9bRQpCUT8mewW6yIc6DHiXh9bAneD6jXF023doK0KkcS8+vRSrtgBESsLYA6te+dg==

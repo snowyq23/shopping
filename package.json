@@ -8,10 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@babel/polyfill": "^7.4.4",
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/vue-fontawesome": "^2.0.2",
     "core-js": "^3.6.5",
+    "roboto-fontface": "*",
     "vue": "^2.6.11",
     "vue-router": "^3.2.0",
-    "vuetify": "^2.4.0",
+    "vuetify": "^2.5.9",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
@@ -22,15 +28,21 @@
     "@vue/cli-service": "~4.5.0",
     "@vue/eslint-config-prettier": "^6.0.0",
     "babel-eslint": "^10.1.0",
+    "deepmerge": "^4.2.2",
     "eslint": "^6.7.2",
     "eslint-plugin-prettier": "^3.3.1",
     "eslint-plugin-vue": "^6.2.2",
     "node-sass": "^4.12.0",
     "prettier": "^2.2.1",
-    "sass": "~1.32.0",
-    "sass-loader": "^10.0.0",
-    "vue-cli-plugin-vuetify": "~2.4.2",
+    "sass": "~1.32",
+    "sass-loader": "^10.1.1",
+    "vue-cli-plugin-vuetify": "~2.4.3",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.7.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false,
+    "trailingComma": "none"
   }
 }

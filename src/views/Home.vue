@@ -1,19 +1,21 @@
 <template>
   <div>
-    <hello-world />
+    <!-- <hello-world /> -->
 
-    <hello-world />
+    <hover-dropdown />
   </div>
 </template>
 
 <script>
-import HelloWorld from "../components/HelloWorld";
+// import HelloWorld from '../components/HelloWorld'
+import HoverDropdown from '../components/HoverDropdown'
 
 export default {
-  name: "Home",
+  name: 'Home',
 
   components: {
-    HelloWorld,
-  },
-};
+    // HelloWorld,
+    HoverDropdown
+  }
+}
 </script>
