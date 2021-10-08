@@ -19,41 +19,35 @@
             Shopper.
           </a>
           <ul class="navbar-nav nav-divided">
-            <v-menu open-on-hover top offset-y>
-              <template v-slot:activator="{ on, attrs }">
-                <li class="nav-item dropdown hovered">
-                  <!-- Toggle -->
-                  <a
-                    class="nav-link text-body dropdown-toggle"
-                    data-toggle="dropdown"
-                    href="#"
-                    aria-expanded="true"
-                    v-bind="attrs"
-                    v-on="on"
-                    >United States</a
-                  >
+            <li class="nav-item dropdown hovered">
+              <!-- Toggle -->
+              <a
+                class="nav-link text-body dropdown-toggle"
+                data-toggle="dropdown"
+                href="#"
+                aria-expanded="true"
+                >United States</a
+              >
 
-                  <!-- Menu -->
-                  <div class="dropdown-menu">
-                    <div class="card card-lg">
-                      <div class="card-body">
-                        <ul class="list-styled font-size-sm">
-                          <li
-                            class="list-styled-item"
-                            v-for="(item, i) in regions"
-                            :key="i"
-                          >
-                            <a class="list-styled-link" href="item.link">
-                              {{ item.text }}
-                            </a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
+              <!-- Menu -->
+              <div class="dropdown-menu">
+                <div class="card card-lg">
+                  <div class="card-body">
+                    <ul class="list-styled font-size-sm">
+                      <li
+                        class="list-styled-item"
+                        v-for="(item, i) in regions"
+                        :key="i"
+                      >
+                        <a class="list-styled-link" href="item.link">
+                          {{ item.text }}
+                        </a>
+                      </li>
+                    </ul>
                   </div>
-                </li>
-              </template>
-            </v-menu>
+                </div>
+              </div>
+            </li>
             <li class="nav-item dropdown hovered">
               <!-- Toggle -->
               <a
@@ -145,7 +139,7 @@
 
 <script>
 export default {
-  name: 'NavigationBar',
+  name: 'TopNavigation',
   data: () => ({
     menu: [
       {
@@ -257,9 +251,9 @@ ul.navbar-nav {
 .navbar-light .navbar-nav .nav-link {
   color: #111;
 }
-.dropdown {
+/* .dropdown {
   display: inline-block;
-}
+} */
 
 .dropdown,
 .dropleft,
@@ -268,10 +262,10 @@ ul.navbar-nav {
   position: relative;
 }
 
-.dropdown-toggle,
+/* .dropdown-toggle,
 .dropright-toggle {
   overflow: hidden;
-}
+} */
 
 .navbar-collapse {
   flex-basis: 100%;
@@ -281,6 +275,17 @@ ul.navbar-nav {
 
 .flex-row {
   flex-direction: row !important;
+}
+.navbar-nav .dropdown.hovered:hover > .dropdown-menu {
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+}
+
+@media (min-width: 992px) {
+  .ml-lg-n4,
+  .mx-lg-n4 {
+    margin-left: -1rem !important;
+  }
 }
 
 @media (min-width: 1200px) {
@@ -313,10 +318,7 @@ ul.navbar-nav {
     padding-right: 1rem;
     padding-left: 1rem;
   }
-  .navbar-nav .hovered > .dropdown-menu {
-    transition: all 0.2s ease-in-out;
-    transition-property: visibility, transform, opacity;
-  }
+
   .navbar-nav .dropdown > .dropdown-menu {
     left: 50%;
     transform: translate(-50%, 0.5rem);
@@ -328,18 +330,17 @@ ul.navbar-nav {
     transform-origin: top center;
     opacity: 0;
   }
+  .navbar-nav .hovered:hover .dropdown-menu {
+    transition: all 0.2s ease-in-out;
+    visibility: hidden;
+    transform-origin: top center;
+    opacity: 1;
+  }
   .navbar-expand-xl .navbar-nav .dropdown-menu {
     position: absolute;
   }
   .d-xl-block {
     display: block !important;
-  }
-}
-
-@media (min-width: 992px) {
-  .ml-lg-n4,
-  .mx-lg-n4 {
-    margin-left: -1rem !important;
   }
 }
 </style>

@@ -14,17 +14,21 @@
         </div>
       </div>
     </div>
-    <navigation-bar />
+    <top-navigation />
+    <bottom-navigation />
   </div>
 </template>
 
 <script>
-import NavigationBar from '../components/NavigationBar'
+import TopNavigation from '../components/TopNavigation'
+import BottomNavigation from '../components/BottomNavigation'
+
 export default {
   name: 'Index-Classic',
 
   components: {
-    NavigationBar
+    TopNavigation,
+    BottomNavigation
   }
 }
 </script>
@@ -57,5 +61,36 @@ export default {
   flex-wrap: wrap;
   margin-right: -1rem;
   margin-left: -1rem;
+}
+
+.container {
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
 }
 </style>
