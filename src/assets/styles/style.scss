@@ -63,6 +63,10 @@ a {
   text-decoration: none;
   color: #111;
 }
+a {
+  transition: all 0.1s ease-in-out;
+  transition-property: color;
+}
 
 .mx-auto {
   margin: 0 auto;
