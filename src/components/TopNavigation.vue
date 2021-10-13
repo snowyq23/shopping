@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-xl navabar-light">
+    <nav class="navbar navbar-expand-xl navabar-light @@classList">
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarClassicCollapse">
           <ul class="navbar-nav">
@@ -110,24 +110,24 @@
           <ul class="navbar-nav flex-row">
             <li class="nav-item">
               <a class="nav-link" data-toggle="modal" href="#modalSearch">
-                <!-- <i class="fas fa-search"></i>
-               -->
-                <font-awesome-icon :icon="['fas', 'search']" />
+                <i class="fas fa-search"></i>
               </a>
             </li>
             <li class="nav-item ml-lg-n4">
               <a class="nav-link" href="./account-orders.html">
-                <font-awesome-icon :icon="['fas', 'user']" />
+                <i class="fas fa-user"></i>
               </a>
             </li>
             <li class="nav-item ml-lg-n4">
               <a class="nav-link" href="./account-wishlist.html">
-                <font-awesome-icon :icon="['fas', 'heart']" />
+                <i class="fas fa-heart"></i>
               </a>
             </li>
             <li class="nav-item ml-lg-n4">
               <a class="nav-link" data-toggle="modal" href="#modalShoppingCart">
-                <font-awesome-icon :icon="['fas', 'shopping-cart']" />
+                <span data-cart-items="2">
+                  <i class="fas fa-shopping-cart"></i>
+                </span>
               </a>
             </li>
           </ul>
@@ -281,10 +281,30 @@ ul.navbar-nav {
   visibility: visible;
 }
 
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
 @media (min-width: 992px) {
   .ml-lg-n4,
   .mx-lg-n4 {
     margin-left: -1rem !important;
+  }
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
   }
 }
 
