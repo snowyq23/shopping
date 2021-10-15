@@ -195,18 +195,6 @@ export default {
 </script>
 
 <style scoped>
-.navbar .container,
-.navbar .container-fluid,
-.navbar .container-lg,
-.navbar .container-md,
-.navbar .container-sm,
-.navbar .container-xl {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .navbar {
   position: relative;
   display: flex;
@@ -275,62 +263,5 @@ ul.navbar-nav {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
-}
-
-@media (min-width: 1200px) {
-  .navbar-expand-xl {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-  }
-  .navbar-expand-xl > .container,
-  .navbar-expand-xl > .container-fluid,
-  .navbar-expand-xl > .container-lg,
-  .navbar-expand-xl > .container-md,
-  .navbar-expand-xl > .container-sm,
-  .navbar-expand-xl > .container-xl {
-    flex-wrap: nowrap;
-  }
-  .navbar-expand-xl .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
-  .navbar:not(.navbar-vertical).navbar-expand-xl .navbar-nav:first-child {
-    margin-left: -1rem;
-  }
-  .navbar:not(.navbar-vertical).navbar-expand-xl .navbar-nav:last-child {
-    margin-right: -1rem;
-  }
-  .navbar-expand-xl .navbar-nav {
-    flex-direction: row;
-  }
-  .navbar-expand-xl .navbar-nav .nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-
-  .navbar-nav .dropdown > .dropdown-menu {
-    left: 50%;
-    transform: translate(-50%, 0.5rem);
-  }
-  .navbar-nav .dropdown > .dropdown-menu,
-  .navbar-nav .dropright > .dropdown-menu {
-    display: block !important;
-    visibility: hidden;
-    transform-origin: top center;
-    opacity: 0;
-  }
-
-  .navbar-nav .dropdown.hovered:hover .dropdown-menu {
-    transition: all 0.2s ease-in-out;
-    visibility: visible;
-    transform-origin: top center;
-    opacity: 1;
-  }
-  .navbar-expand-xl .navbar-nav .dropdown-menu {
-    position: absolute;
-  }
-  .d-xl-block {
-    display: block !important;
-  }
 }
 </style>

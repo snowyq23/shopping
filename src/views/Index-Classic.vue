@@ -66,6 +66,25 @@ export default {
   justify-content: flex-end !important;
 }
 
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 200px;
+  padding: 0 0;
+  margin: 0 0 0;
+  font-size: 1rem;
+  color: #111;
+  text-align: left;
+  list-style: none;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #e5e5e5;
+}
+
 .container {
   width: 100%;
   padding-right: 1rem;
@@ -219,6 +238,10 @@ export default {
     flex-grow: 1;
     max-width: 100%;
   }
+  .col-sm-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
 }
 @media (min-width: 768px) {
   .col-md-3 {
@@ -276,13 +299,87 @@ export default {
   transition-property: left;
 }
 
-.v-application a {
-  color: #fff;
-}
+/* .v-application a {
+  color: #111;
+} */
 
 .v-application .display-1 {
   font-size: 6.875rem !important;
   font-weight: 500;
   line-height: 1.2;
+}
+
+#banner #app {
+  max-height: 500px;
+}
+
+/* container styling */
+.navbar .container,
+.navbar .container-fluid,
+.navbar .container-lg,
+.navbar .container-md,
+.navbar .container-sm,
+.navbar .container-xl {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 1200px) {
+  .navbar-expand-xl {
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+  }
+  .navbar-expand-xl > .container,
+  .navbar-expand-xl > .container-fluid,
+  .navbar-expand-xl > .container-lg,
+  .navbar-expand-xl > .container-md,
+  .navbar-expand-xl > .container-sm,
+  .navbar-expand-xl > .container-xl {
+    flex-wrap: nowrap;
+  }
+  .navbar-expand-xl .navbar-collapse {
+    display: flex !important;
+    flex-basis: auto;
+  }
+  .navbar:not(.navbar-vertical).navbar-expand-xl .navbar-nav:first-child {
+    margin-left: -1rem;
+  }
+  .navbar:not(.navbar-vertical).navbar-expand-xl .navbar-nav:last-child {
+    margin-right: -1rem;
+  }
+  .navbar-expand-xl .navbar-nav {
+    flex-direction: row;
+  }
+  .navbar-expand-xl .navbar-nav .nav-link {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .navbar-expand-xl .navbar-nav .dropdown-menu {
+    position: absolute;
+  }
+  .navbar-nav .dropdown > .dropdown-menu,
+  .navbar-nav .dropright > .dropdown-menu {
+    display: block !important;
+    visibility: hidden;
+    transform-origin: top center;
+    opacity: 0;
+  }
+  .navbar-nav .dropdown > .dropdown-menu {
+    left: 50%;
+    transform: translate(-50%, 0.5rem);
+  }
+  .navbar-nav .dropdown.hovered:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    z-index: 1;
+    transition: all 0.2s ease-in-out;
+    transition-property: visibility, transform, opacity;
+  }
+
+  .d-xl-block {
+    display: block !important;
+  }
 }
 </style>

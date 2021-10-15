@@ -200,6 +200,14 @@ h6 {
 .mx-auto {
   margin: 0 auto;
 }
+.mt-auto,
+.my-auto {
+  margin-top: auto !important;
+}
+.mb-auto,
+.my-auto {
+  margin-bottom: auto !important;
+}
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important;
@@ -207,6 +215,14 @@ h6 {
 .mb-3,
 .my-3 {
   margin-bottom: 0.75rem !important;
+}
+.mr-n3,
+.mx-n3 {
+  margin-right: -0.75rem !important;
+}
+.ml-n3,
+.mx-n3 {
+  margin-left: -0.75rem !important;
 }
 .mt-4,
 .my-4 {
@@ -256,6 +272,12 @@ h6 {
 .my-11 {
   margin-bottom: 5rem !important;
 }
+@media (min-width: 576px) {
+  .mb-sm-0,
+  .my-sm-0 {
+    margin-bottom: 0 !important;
+  }
+}
 @media (min-width: 768px) {
   .mb-md-0,
   .my-md-0 {
@@ -263,6 +285,22 @@ h6 {
   }
 }
 
+.pr-0,
+.px-0 {
+  padding-right: 0 !important;
+}
+.pl-0,
+.px-0 {
+  padding-left: 0 !important;
+}
+.pr-3,
+.px-3 {
+  padding-right: 0.75rem !important;
+}
+.pl-3,
+.px-3 {
+  padding-left: 0.75rem !important;
+}
 .pt-6,
 .py-6 {
   padding-top: 1.5rem !important;
@@ -270,6 +308,16 @@ h6 {
 .pb-6,
 .py-6 {
   padding-bottom: 1.5rem !important;
+}
+@media (min-width: 768px) {
+  .pr-md-6,
+  .px-md-6 {
+    padding-right: 1.5rem !important;
+  }
+  .pl-md-6,
+  .px-md-6 {
+    padding-left: 1.5rem !important;
+  }
 }
 .pt-7,
 .py-7 {
@@ -462,5 +510,25 @@ img {
 .card-body {
   flex: 0 0 auto;
 }
-
-// default row
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.card-xl .card-body,
+.card-xl .card-footer {
+  padding: 2.5rem;
+}
+// default list
+.list-styled {
+  list-style-type: none;
+  padding-left: 0;
+}
+.list-styled-link {
+  display: block;
+  color: #525252;
+  font-weight: 100;
+}
