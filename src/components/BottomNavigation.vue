@@ -3,7 +3,9 @@
     <footer
       id="bottom-navigation"
       class="bg-dark bg-cover @@classList"
-      style="background-image: url(#)"
+      :style="{
+        'background-image': `url(${require('@/assets/img/patterns/pattern-2.svg')})`
+      }"
     >
       <div class="py-12 border-bottom border-gray-700">
         <div class="container">
