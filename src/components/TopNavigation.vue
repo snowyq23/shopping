@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-xl navabar-light @@classList">
+    <nav class="navbar navbar-expand-xl navbar-light @@classList">
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarClassicCollapse">
           <ul class="navbar-nav">
@@ -110,23 +110,23 @@
           <ul class="navbar-nav flex-row">
             <li class="nav-item">
               <a class="nav-link" data-toggle="modal" href="#modalSearch">
-                <i class="fas fa-search"></i>
+                <i class="fa fa-search"></i>
               </a>
             </li>
             <li class="nav-item ml-lg-n4">
               <a class="nav-link" href="./account-orders.html">
-                <i class="fas fa-user"></i>
+                <i class="fa fa-user"></i>
               </a>
             </li>
             <li class="nav-item ml-lg-n4">
               <a class="nav-link" href="./account-wishlist.html">
-                <i class="fas fa-heart"></i>
+                <i class="fa fa-heart"></i>
               </a>
             </li>
             <li class="nav-item ml-lg-n4">
               <a class="nav-link" data-toggle="modal" href="#modalShoppingCart">
                 <span data-cart-items="2">
-                  <i class="fas fa-shopping-cart"></i>
+                  <i class="fa fa-shopping-cart"></i>
                 </span>
               </a>
             </li>
@@ -251,6 +251,10 @@ ul.navbar-nav {
 .navbar-light .navbar-nav .nav-link {
   color: #111;
 }
+.navbar-light .navbar-nav .nav-link:focus,
+.navbar-light .navbar-nav .nav-link:hover {
+  color: #ff6f61;
+}
 /* .dropdown {
   display: inline-block;
 } */
@@ -271,41 +275,6 @@ ul.navbar-nav {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
-}
-
-.flex-row {
-  flex-direction: row !important;
-}
-.navbar-nav .dropdown.hovered:hover > .dropdown-menu {
-  transition: all 0.2s ease-in-out;
-  visibility: visible;
-}
-
-@media (min-width: 576px) {
-  .container,
-  .container-sm {
-    max-width: 540px;
-  }
-}
-@media (min-width: 768px) {
-  .container,
-  .container-md,
-  .container-sm {
-    max-width: 720px;
-  }
-}
-@media (min-width: 992px) {
-  .ml-lg-n4,
-  .mx-lg-n4 {
-    margin-left: -1rem !important;
-  }
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1140px;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -350,9 +319,10 @@ ul.navbar-nav {
     transform-origin: top center;
     opacity: 0;
   }
-  .navbar-nav .hovered:hover .dropdown-menu {
+
+  .navbar-nav .dropdown.hovered:hover .dropdown-menu {
     transition: all 0.2s ease-in-out;
-    visibility: hidden;
+    visibility: visible;
     transform-origin: top center;
     opacity: 1;
   }

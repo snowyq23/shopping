@@ -170,12 +170,36 @@
             </div>
             <div class="col-auto">
               <!-- Payment methods -->
-              <img class="footer-payment" src="#" alt="..." />
-              <img class="footer-payment" src="#" alt="..." />
-              <img class="footer-payment" src="#" alt="..." />
-              <img class="footer-payment" src="#" alt="..." />
-              <img class="footer-payment" src="#" alt="..." />
-              <img class="footer-payment" src="#" alt="..." />
+              <img
+                class="footer-payment"
+                src="@/assets/img/payment/mastercard.svg"
+                alt="..."
+              />
+              <img
+                class="footer-payment"
+                src="@/assets/img/payment/visa.svg"
+                alt="..."
+              />
+              <img
+                class="footer-payment"
+                src="@/assets/img/payment/amex.svg"
+                alt="..."
+              />
+              <img
+                class="footer-payment"
+                src="@/assets/img/payment/paypal.svg"
+                alt="..."
+              />
+              <img
+                class="footer-payment"
+                src="@/assets/img/payment/maestro.svg"
+                alt="..."
+              />
+              <img
+                class="footer-payment"
+                src="@/assets/img/payment/klarna.svg"
+                alt="..."
+              />
             </div>
           </div>
         </div>
@@ -198,6 +222,15 @@ export default {
 }
 .align-items-start {
   align-items: flex-start !important;
+}
+.footer-payment {
+  height: 1.5rem;
+  width: auto;
+}
+img.footer-payment {
+  vertical-align: middle;
+  border-style: none;
+  padding: 2px;
 }
 
 /* Form styling */
@@ -285,11 +318,4 @@ export default {
 }
 
 /* Spacing styling */
-p {
-  margin-top: 0;
-  margin-bottom: 1.5rem;
-}
-.font-size-xxs {
-  font-size: 0.8125rem !important;
-}
 </style>

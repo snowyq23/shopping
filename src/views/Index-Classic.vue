@@ -15,6 +15,7 @@
       </div>
     </div>
     <top-navigation />
+    <banner-classic />
     <bottom-navigation />
   </div>
 </template>
@@ -22,26 +23,29 @@
 <script>
 import TopNavigation from '../components/TopNavigation'
 import BottomNavigation from '../components/BottomNavigation'
+import BannerClassic from '../components/BannerClassic'
 
 export default {
   name: 'Index-Classic',
 
   components: {
     TopNavigation,
-    BottomNavigation
+    BottomNavigation,
+    BannerClassic
   }
 }
 </script>
 
 <style>
-.bg-dark {
-  background-color: var(--dark) !important;
+.d-flex {
+  display: flex !important;
 }
-
-.letter-spacing-xl {
-  letter-spacing: 0.05em !important;
+.flex-row {
+  flex-direction: row !important;
 }
-
+.flex-column {
+  flex-direction: column !important;
+}
 .heading-xxs {
   font-size: 0.8125rem;
   font-weight: 500;
@@ -54,9 +58,14 @@ export default {
   margin-right: -1rem;
   margin-left: -1rem;
 }
+
 .justify-content-center {
   justify-content: center !important;
 }
+.justify-content-end {
+  justify-content: flex-end !important;
+}
+
 .container {
   width: 100%;
   padding-right: 1rem;
@@ -64,8 +73,118 @@ export default {
   margin-right: auto;
   margin-left: auto;
 }
+@media (min-width: 576px) {
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .ml-lg-n4,
+  .mx-lg-n4 {
+    margin-left: -1rem !important;
+  }
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
 
 /* Column styling */
+.col,
+.col-1,
+.col-10,
+.col-11,
+.col-12,
+.col-2,
+.col-3,
+.col-4,
+.col-5,
+.col-6,
+.col-7,
+.col-8,
+.col-9,
+.col-auto,
+.col-lg,
+.col-lg-1,
+.col-lg-10,
+.col-lg-11,
+.col-lg-12,
+.col-lg-2,
+.col-lg-3,
+.col-lg-4,
+.col-lg-5,
+.col-lg-6,
+.col-lg-7,
+.col-lg-8,
+.col-lg-9,
+.col-lg-auto,
+.col-md,
+.col-md-1,
+.col-md-10,
+.col-md-11,
+.col-md-12,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-auto,
+.col-sm,
+.col-sm-1,
+.col-sm-10,
+.col-sm-11,
+.col-sm-12,
+.col-sm-2,
+.col-sm-3,
+.col-sm-4,
+.col-sm-5,
+.col-sm-6,
+.col-sm-7,
+.col-sm-8,
+.col-sm-9,
+.col-sm-auto,
+.col-xl,
+.col-xl-1,
+.col-xl-10,
+.col-xl-11,
+.col-xl-12,
+.col-xl-2,
+.col-xl-3,
+.col-xl-4,
+.col-xl-5,
+.col-xl-6,
+.col-xl-7,
+.col-xl-8,
+.col-xl-9,
+.col-xl-auto {
+  position: relative;
+  width: 100%;
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
 .col {
   flex-basis: 0;
   flex-grow: 1;
@@ -106,12 +225,24 @@ export default {
     flex: 0 0 25%;
     max-width: 25%;
   }
+  .col-md-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
   .col-md-10 {
     flex: 0 0 83.33333%;
     max-width: 83.33333%;
   }
 }
 @media (min-width: 992px) {
+  .col-lg-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
   .col-lg-8 {
     flex: 0 0 66.66667%;
     max-width: 66.66667%;
@@ -122,5 +253,36 @@ export default {
     flex: 0 0 50%;
     max-width: 50%;
   }
+}
+
+/* banner styling */
+.link-underline {
+  position: relative;
+  display: inline-block;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  font-weight: 500;
+  color: #111;
+}
+.link-underline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  border-bottom: 1px solid;
+  transform-origin: left center;
+  transition: all 0.2s ease-in-out;
+  transition-property: left;
+}
+
+.v-application a {
+  color: #fff;
+}
+
+.v-application .display-1 {
+  font-size: 6.875rem !important;
+  font-weight: 500;
+  line-height: 1.2;
 }
 </style>
