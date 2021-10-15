@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="top-navigation">
     <nav class="navbar navbar-expand-xl navbar-light @@classList">
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarClassicCollapse">

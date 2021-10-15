@@ -1,6 +1,7 @@
 <template>
   <div>
     <footer
+      id="bottom-navigation"
       class="bg-dark bg-cover @@classList"
       style="background-image: url(#)"
     >

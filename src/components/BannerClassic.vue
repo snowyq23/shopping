@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="classic-info">
     <section id="banner">
       <v-app>
         <v-carousel

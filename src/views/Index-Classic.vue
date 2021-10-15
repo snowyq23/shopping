@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="py-3 bg-dark bg-pattern @@classList">
+  <div id="main">
+    <div id="announcement" class="py-3 bg-dark bg-pattern @@classList">
       <div class="container">
         <div class="row">
           <div class="col-12">
