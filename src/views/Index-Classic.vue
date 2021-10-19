@@ -85,6 +85,20 @@ export default {
   border: 1px solid #e5e5e5;
 }
 
+.card-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 0.25rem);
+  height: 100%;
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+  transition-property: transform;
+}
+.card:hover .card-bg-img {
+  transform: translateX(-0.5rem);
+}
+
 .container {
   width: 100%;
   padding-right: 1rem;

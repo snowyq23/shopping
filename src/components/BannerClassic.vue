@@ -1,13 +1,20 @@
 <template>
   <div id="classic-info">
     <section id="banner">
-      <v-app>
+      <v-app
+        class="vuetify-viewport"
+        style="height: 550px; touch-action: pan-y"
+      >
         <v-carousel
-          class="vuetify-viewport"
           hide-delimiters
-          style="height: 550px; touch-action: pan-y"
+          class="vuetify-slider"
+          style="left: 0px; transform: translateX(0%)"
         >
-          <v-carousel-item style="left: 0px; transform: translateX(0%)">
+          <v-carousel-item
+            style="left: 0px; transform: translateX(0%)"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
+          >
             <div
               class="w-100 bg-cover is-selected"
               :style="{
@@ -39,7 +46,11 @@
               </div>
             </div>
           </v-carousel-item>
-          <v-carousel-item style="left: 0px; transform: translateX(0%)">
+          <v-carousel-item
+            style="left: 0px; transform: translateX(0%)"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
+          >
             <div
               class="w-100 bg-cover is-selected"
               :style="{
@@ -71,7 +82,11 @@
               </div>
             </div>
           </v-carousel-item>
-          <v-carousel-item style="left: 0px; transform: translateX(0%)">
+          <v-carousel-item
+            style="left: 0px; transform: translateX(0%)"
+            reverse-transition="fade-transition"
+            transition="fade-transition"
+          >
             <div
               class="w-100 bg-cover"
               :style="{
@@ -198,6 +213,388 @@
               <div class="card-body my-auto">
                 <!-- Heading -->
                 <h5 class="mb-0">Floral Dresses</h5>
+
+                <!-- Link -->
+                <a
+                  class="btn btn-link stretched-link px-0 text-reset"
+                  href="shop.html"
+                >
+                  Shop Now <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="category-list" class="py-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- Heading -->
+            <h2 class="mb-4 text-center">Shop by Category</h2>
+
+            <!-- Nav -->
+            <div class="nav justify-content-center mb-10">
+              <a class="nav-link active" href="#topSellersTab" data-toggle="tab"
+                >Women</a
+              >
+              <a class="nav-link" href="#topSellersTab" data-toggle="tab"
+                >Men</a
+              >
+              <a class="nav-link" href="#topSellersTab" data-toggle="tab"
+                >Kids</a
+              >
+            </div>
+
+            <!-- Content -->
+            <div class="tab-content">
+              <!-- Pane -->
+              <div class="tab-pane fade show active" id="topSellersTab">
+                <!-- Slider -->
+                <div
+                  class="
+                    flickity-buttons-lg flickity-buttons-offset
+                    px-lg-12
+                    flickity-enabled
+                    is-draggable
+                  "
+                  data-flickity='{"prevNextButtons": true}'
+                  tabindex="0"
+                >
+                  <!-- Item -->
+
+                  <!-- Item -->
+
+                  <!-- Item -->
+
+                  <!-- Item -->
+
+                  <!-- Item -->
+
+                  <!-- Item -->
+
+                  <!-- Item -->
+
+                  <div
+                    class="flickity-viewport"
+                    style="height: 236px; touch-action: pan-y"
+                  >
+                    <div
+                      class="flickity-slider"
+                      style="left: 0px; transform: translateX(-152.84%)"
+                    >
+                      <div
+                        class="col is-selected"
+                        style="
+                          max-width: 200px;
+                          position: absolute;
+                          left: 152.84%;
+                        "
+                      >
+                        <div class="card">
+                          <!-- Image -->
+                          <img
+                            class="card-img-top"
+                            src="@/assets/img/products/product-25.jpg"
+                            alt="..."
+                          />
+
+                          <!-- Body -->
+                          <div class="card-body py-4 px-0 text-center">
+                            <!-- Heading -->
+                            <a
+                              class="stretched-link text-body"
+                              href="shop.html"
+                            >
+                              <h6>Dresses <small>(58)</small></h6>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col"
+                        style="
+                          max-width: 200px;
+                          position: absolute;
+                          left: 174.67%;
+                        "
+                        aria-hidden="true"
+                      >
+                        <div class="card">
+                          <!-- Image -->
+                          <img
+                            class="card-img-top"
+                            src="@/assets/img/products/product-26.jpg"
+                            alt="..."
+                          />
+
+                          <!-- Body -->
+                          <div class="card-body py-4 px-0 text-center">
+                            <!-- Heading -->
+                            <a
+                              class="stretched-link text-body"
+                              href="shop.html"
+                            >
+                              <h6>Tops <small>(35)</small></h6>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col"
+                        style="
+                          max-width: 200px;
+                          position: absolute;
+                          left: 196.51%;
+                        "
+                        aria-hidden="true"
+                      >
+                        <div class="card">
+                          <!-- Image -->
+                          <img
+                            class="card-img-top"
+                            src="@/assets/img/products/product-27.jpg"
+                            alt="..."
+                          />
+
+                          <!-- Body -->
+                          <div class="card-body py-4 px-0 text-center">
+                            <!-- Heading -->
+                            <a
+                              class="stretched-link text-body"
+                              href="shop.html"
+                            >
+                              <h6>T-shirts <small>(27)</small></h6>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col"
+                        style="
+                          max-width: 200px;
+                          position: absolute;
+                          left: 218.34%;
+                        "
+                        aria-hidden="true"
+                      >
+                        <div class="card">
+                          <!-- Image -->
+                          <img
+                            class="card-img-top"
+                            src="@/assets/img/products/product-28.jpg"
+                            alt="..."
+                          />
+
+                          <!-- Body -->
+                          <div class="card-body py-4 px-0 text-center">
+                            <!-- Heading -->
+                            <a
+                              class="stretched-link text-body"
+                              href="shop.html"
+                            >
+                              <h6>Shoes <small>(64)</small></h6>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col"
+                        style="
+                          max-width: 200px;
+                          position: absolute;
+                          left: 240.17%;
+                        "
+                        aria-hidden="true"
+                      >
+                        <div class="card">
+                          <!-- Image -->
+                          <img
+                            class="card-img-top"
+                            src="@/assets/img/products/product-29.jpg"
+                            alt="..."
+                          />
+
+                          <!-- Body -->
+                          <div class="card-body py-4 px-0 text-center">
+                            <!-- Heading -->
+                            <a
+                              class="stretched-link text-body"
+                              href="shop.html"
+                            >
+                              <h6>Jeans <small>(12)</small></h6>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col"
+                        style="
+                          max-width: 200px;
+                          position: absolute;
+                          left: 109.17%;
+                        "
+                        aria-hidden="true"
+                      >
+                        <div class="card">
+                          <!-- Image -->
+                          <img
+                            class="card-img-top"
+                            src="@/assets/img/products/product-125.jpg"
+                            alt="..."
+                          />
+
+                          <!-- Body -->
+                          <div class="card-body py-4 px-0 text-center">
+                            <!-- Heading -->
+                            <a
+                              class="stretched-link text-body"
+                              href="shop.html"
+                            >
+                              <h6>Sweatshirts <small>(11)</small></h6>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div
+                        class="col"
+                        style="max-width: 200px; position: absolute; left: 131%"
+                        aria-hidden="true"
+                      >
+                        <div class="card">
+                          <!-- Image -->
+                          <img
+                            class="card-img-top"
+                            src="@/assets/img/products/product-126.jpg"
+                            alt="..."
+                          />
+
+                          <!-- Body -->
+                          <div class="card-body py-4 px-0 text-center">
+                            <!-- Heading -->
+                            <a
+                              class="stretched-link text-body"
+                              href="shop.html"
+                            >
+                              <h6>Jackets <small>(9)</small></h6>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <button
+                    class="flickity-button flickity-prev-next-button previous"
+                    type="button"
+                    aria-label="Previous"
+                  >
+                    <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                      <path
+                        d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+                        class="arrow"
+                      ></path>
+                    </svg></button
+                  ><button
+                    class="flickity-button flickity-prev-next-button next"
+                    type="button"
+                    aria-label="Next"
+                  >
+                    <svg class="flickity-button-icon" viewBox="0 0 100 100">
+                      <path
+                        d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
+                        class="arrow"
+                        transform="translate(100, 100) rotate(180) "
+                      ></path>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="top-product">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-md-6">
+            <!-- Card -->
+            <div class="card card-lg">
+              <!-- Circle -->
+              <div class="card-circle card-circle-lg card-circle-right">
+                <strong
+                  class="font-size-xs text-decoration-line-through opacity-80"
+                  >$99.00</strong
+                >
+                <span class="font-size-h6 font-weight-bold">$59.00</span>
+              </div>
+
+              <!-- Image -->
+              <img
+                class="card-img-top"
+                src="@/assets/img/products/product-30.jpg"
+                alt="..."
+              />
+
+              <!-- Body -->
+              <div
+                class="
+                  card-body
+                  position-relative
+                  mx-6 mx-lg-11
+                  mt-n11
+                  bg-white
+                  text-center
+                "
+              >
+                <!-- Heading -->
+                <h4 class="mb-0">Cropped Trousers</h4>
+
+                <!-- Link -->
+                <a
+                  class="btn btn-link stretched-link px-0 text-reset"
+                  href="shop.html"
+                >
+                  Shop Now <i class="fa fa-arrow-right ml-2"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <!-- Card -->
+            <div class="card card-lg">
+              <!-- Circle -->
+              <div class="card-circle card-circle-lg card-circle-right">
+                <strong
+                  class="font-size-xs text-decoration-line-through opacity-80"
+                  >$99.00</strong
+                >
+                <span class="font-size-h6 font-weight-bold">$59.00</span>
+              </div>
+
+              <!-- Image -->
+              <img
+                class="card-img-top"
+                src="@/assets/img/products/product-31.jpg"
+                alt="..."
+              />
+
+              <!-- Body -->
+              <div
+                class="
+                  card-body
+                  position-relative
+                  mx-6 mx-lg-11
+                  mt-n11
+                  bg-white
+                  text-center
+                "
+              >
+                <!-- Heading -->
+                <h4 class="mb-0">Leather Sneakers</h4>
 
                 <!-- Link -->
                 <a
@@ -419,6 +816,11 @@ export default {
   position: relative;
   height: 100%;
 }
+.vuetify-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
 /* blog styling */
 .shadow {
   box-shadow: 0 0.25rem 0.25rem rgba(17, 17, 17, 0.02) !important;
@@ -442,6 +844,71 @@ export default {
 
 .position-static {
   position: static !important;
+}
+
+/* navigation router */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav-link.active:focus,
+.nav-link.active:hover {
+  color: #ff6f61;
+}
+/* .nav-link.active::before {
+  content: '';
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.25rem;
+  border-top: 1px solid #ff6f61;
+} */
+
+/* top product styling */
+.card-circle {
+  position: absolute;
+  top: 1.25rem;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  background-color: #ff6f61;
+  border-radius: 50%;
+  color: #fff;
+}
+.card-circle-lg {
+  width: 96px;
+  height: 96px;
+}
+.card-circle-right {
+  right: 1.25rem;
+}
+.card-body .btn > .fa-arrow-right {
+  display: inline-block;
+  transform: translateX(20%);
+  transition: 1s;
+  transition: all 0.2s ease-in-out;
+  transition-property: transform;
+}
+.card-body:hover .btn > .fa-arrow-right {
+  transform: translateX(50%);
+}
+.stretched-link::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  pointer-events: auto;
+  content: '';
+  background-color: rgba(0, 0, 0, 0);
 }
 
 /* background overlay */

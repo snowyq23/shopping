@@ -252,6 +252,10 @@ h6 {
 .mx-6 {
   margin-left: 1.5rem !important;
 }
+.mr-6,
+.mx-6 {
+  margin-right: 1.5rem !important;
+}
 .mb-7,
 .my-7 {
   margin-bottom: 2rem !important;
@@ -272,6 +276,10 @@ h6 {
 .my-11 {
   margin-bottom: 5rem !important;
 }
+.mt-n11,
+.my-n11 {
+  margin-top: -5rem !important;
+}
 @media (min-width: 576px) {
   .mb-sm-0,
   .my-sm-0 {
@@ -282,6 +290,16 @@ h6 {
   .mb-md-0,
   .my-md-0 {
     margin-bottom: 0 !important;
+  }
+}
+@media (min-width: 992px) {
+  .mr-lg-11,
+  .mx-lg-11 {
+    margin-right: 5rem !important;
+  }
+  .ml-lg-11,
+  .mx-lg-11 {
+    margin-left: 5rem !important;
   }
 }
 
@@ -380,6 +398,9 @@ h6 {
 .bg-light {
   background-color: #f5f5f5 !important;
 }
+.bg-white {
+  background-color: #fff !important;
+}
 
 // default text
 .font-size-xxs {
@@ -394,6 +415,9 @@ h6 {
 .font-size-lg {
   font-size: 1.125rem !important;
 }
+.font-size-h6 {
+  font-size: 1.25rem !important;
+}
 
 .letter-spacing-xl {
   letter-spacing: 0.05em !important;
@@ -402,6 +426,7 @@ h6 {
 .text-center {
   text-align: center !important;
 }
+
 .text-gray-300 {
   color: #bababa !important;
 }
@@ -425,6 +450,16 @@ h6 {
 // }
 .text-white {
   color: var(--white) !important;
+}
+
+.text-decoration-line-through {
+  text-decoration: line-through !important;
+}
+strong {
+  font-weight: 500;
+}
+.font-weight-bold {
+  font-weight: 500 !important;
 }
 
 // default button
@@ -522,6 +557,11 @@ img {
 .card-xl .card-footer {
   padding: 2.5rem;
 }
+.card-lg .card-body,
+.card-lg .card-footer {
+  padding: 2rem;
+}
+
 // default list
 .list-styled {
   list-style-type: none;
@@ -531,4 +571,9 @@ img {
   display: block;
   color: #525252;
   font-weight: 100;
+}
+
+// default visibility
+.opacity-80 {
+  opacity: 0.8;
 }
