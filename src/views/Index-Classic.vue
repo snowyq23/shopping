@@ -85,6 +85,14 @@ export default {
   border: 1px solid #e5e5e5;
 }
 
+.card-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 .card-bg-img {
   position: absolute;
   top: 0;
@@ -394,6 +402,14 @@ export default {
 
   .d-xl-block {
     display: block !important;
+  }
+}
+@media (min-width: 992px) {
+  #category-list #topSellersTab .v-slide-group__prev {
+    padding-right: 6rem !important;
+  }
+  #category-list #topSellersTab .v-slide-group__next {
+    padding-left: 6rem !important;
   }
 }
 </style>

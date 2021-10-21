@@ -251,53 +251,36 @@
             <!-- Content -->
             <div class="tab-content">
               <!-- Pane -->
-              <div class="tab-pane fade show active" id="topSellersTab">
-                <!-- Slider -->
-                <div
-                  class="
-                    flickity-buttons-lg flickity-buttons-offset
-                    px-lg-12
-                    flickity-enabled
-                    is-draggable
-                  "
-                  data-flickity='{"prevNextButtons": true}'
-                  tabindex="0"
-                >
-                  <!-- Item -->
-
-                  <!-- Item -->
-
-                  <!-- Item -->
-
-                  <!-- Item -->
-
-                  <!-- Item -->
-
-                  <!-- Item -->
-
-                  <!-- Item -->
-
-                  <div
-                    class="flickity-viewport"
+              <div class="tab-pane fade active show" id="topSellersTab">
+                <v-sheet>
+                  <!-- Slider -->
+                  <v-slide-group
+                    show-arrows
+                    class="vuetify-enabled is-draggable"
                     style="height: 236px; touch-action: pan-y"
                   >
-                    <div
-                      class="flickity-slider"
-                      style="left: 0px; transform: translateX(-152.84%)"
-                    >
-                      <div
-                        class="col is-selected"
-                        style="
-                          max-width: 200px;
-                          position: absolute;
-                          left: 152.84%;
-                        "
-                      >
+                    <!-- Item -->
+
+                    <!-- Item -->
+
+                    <!-- Item -->
+
+                    <!-- Item -->
+
+                    <!-- Item -->
+
+                    <!-- Item -->
+
+                    <!-- Item -->
+                    <v-slide-item v-for="(item, i) in categoryWomen" :key="i">
+                      <div class="col" style="max-width: 200px">
                         <div class="card">
                           <!-- Image -->
                           <img
                             class="card-img-top"
-                            src="@/assets/img/products/product-25.jpg"
+                            :src="
+                              require(`@/assets/img/products/${item.image}.jpg`)
+                            "
                             alt="..."
                           />
 
@@ -306,210 +289,18 @@
                             <!-- Heading -->
                             <a
                               class="stretched-link text-body"
-                              href="shop.html"
+                              :href="item.link"
                             >
-                              <h6>Dresses <small>(58)</small></h6>
+                              <h6>
+                                {{ item.name }}<small>{{ item.amount }}</small>
+                              </h6>
                             </a>
                           </div>
                         </div>
                       </div>
-                      <div
-                        class="col"
-                        style="
-                          max-width: 200px;
-                          position: absolute;
-                          left: 174.67%;
-                        "
-                        aria-hidden="true"
-                      >
-                        <div class="card">
-                          <!-- Image -->
-                          <img
-                            class="card-img-top"
-                            src="@/assets/img/products/product-26.jpg"
-                            alt="..."
-                          />
-
-                          <!-- Body -->
-                          <div class="card-body py-4 px-0 text-center">
-                            <!-- Heading -->
-                            <a
-                              class="stretched-link text-body"
-                              href="shop.html"
-                            >
-                              <h6>Tops <small>(35)</small></h6>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col"
-                        style="
-                          max-width: 200px;
-                          position: absolute;
-                          left: 196.51%;
-                        "
-                        aria-hidden="true"
-                      >
-                        <div class="card">
-                          <!-- Image -->
-                          <img
-                            class="card-img-top"
-                            src="@/assets/img/products/product-27.jpg"
-                            alt="..."
-                          />
-
-                          <!-- Body -->
-                          <div class="card-body py-4 px-0 text-center">
-                            <!-- Heading -->
-                            <a
-                              class="stretched-link text-body"
-                              href="shop.html"
-                            >
-                              <h6>T-shirts <small>(27)</small></h6>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col"
-                        style="
-                          max-width: 200px;
-                          position: absolute;
-                          left: 218.34%;
-                        "
-                        aria-hidden="true"
-                      >
-                        <div class="card">
-                          <!-- Image -->
-                          <img
-                            class="card-img-top"
-                            src="@/assets/img/products/product-28.jpg"
-                            alt="..."
-                          />
-
-                          <!-- Body -->
-                          <div class="card-body py-4 px-0 text-center">
-                            <!-- Heading -->
-                            <a
-                              class="stretched-link text-body"
-                              href="shop.html"
-                            >
-                              <h6>Shoes <small>(64)</small></h6>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col"
-                        style="
-                          max-width: 200px;
-                          position: absolute;
-                          left: 240.17%;
-                        "
-                        aria-hidden="true"
-                      >
-                        <div class="card">
-                          <!-- Image -->
-                          <img
-                            class="card-img-top"
-                            src="@/assets/img/products/product-29.jpg"
-                            alt="..."
-                          />
-
-                          <!-- Body -->
-                          <div class="card-body py-4 px-0 text-center">
-                            <!-- Heading -->
-                            <a
-                              class="stretched-link text-body"
-                              href="shop.html"
-                            >
-                              <h6>Jeans <small>(12)</small></h6>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col"
-                        style="
-                          max-width: 200px;
-                          position: absolute;
-                          left: 109.17%;
-                        "
-                        aria-hidden="true"
-                      >
-                        <div class="card">
-                          <!-- Image -->
-                          <img
-                            class="card-img-top"
-                            src="@/assets/img/products/product-125.jpg"
-                            alt="..."
-                          />
-
-                          <!-- Body -->
-                          <div class="card-body py-4 px-0 text-center">
-                            <!-- Heading -->
-                            <a
-                              class="stretched-link text-body"
-                              href="shop.html"
-                            >
-                              <h6>Sweatshirts <small>(11)</small></h6>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                      <div
-                        class="col"
-                        style="max-width: 200px; position: absolute; left: 131%"
-                        aria-hidden="true"
-                      >
-                        <div class="card">
-                          <!-- Image -->
-                          <img
-                            class="card-img-top"
-                            src="@/assets/img/products/product-126.jpg"
-                            alt="..."
-                          />
-
-                          <!-- Body -->
-                          <div class="card-body py-4 px-0 text-center">
-                            <!-- Heading -->
-                            <a
-                              class="stretched-link text-body"
-                              href="shop.html"
-                            >
-                              <h6>Jackets <small>(9)</small></h6>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <button
-                    class="flickity-button flickity-prev-next-button previous"
-                    type="button"
-                    aria-label="Previous"
-                  >
-                    <svg class="flickity-button-icon" viewBox="0 0 100 100">
-                      <path
-                        d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
-                        class="arrow"
-                      ></path>
-                    </svg></button
-                  ><button
-                    class="flickity-button flickity-prev-next-button next"
-                    type="button"
-                    aria-label="Next"
-                  >
-                    <svg class="flickity-button-icon" viewBox="0 0 100 100">
-                      <path
-                        d="M 10,50 L 60,100 L 70,90 L 30,50  L 70,10 L 60,0 Z"
-                        class="arrow"
-                        transform="translate(100, 100) rotate(180) "
-                      ></path>
-                    </svg>
-                  </button>
-                </div>
+                    </v-slide-item>
+                  </v-slide-group>
+                </v-sheet>
               </div>
             </div>
           </div>
@@ -607,6 +398,393 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section id="new-arrivals" class="py-12">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <!-- Heading -->
+            <h2 class="mb-10 text-center">New Arrivals</h2>
+          </div>
+        </div>
+      </div>
+      <div
+        class="flickity-page-dots-progress flickity-enabled is-draggable"
+        data-flickity='{"pageDots": true}'
+        tabindex="0"
+      >
+        <!-- Item -->
+
+        <!-- Item -->
+
+        <!-- Item -->
+
+        <!-- Item -->
+
+        <!-- Item -->
+
+        <!-- Item -->
+
+        <!-- Item -->
+
+        <div
+          class="flickity-viewport"
+          style="height: 413.625px; touch-action: pan-y"
+        >
+          <div
+            class="flickity-slider"
+            style="left: 0px; transform: translateX(-49.18%)"
+          >
+            <div
+              class="col"
+              style="max-width: 300px; position: absolute; left: 0%"
+              aria-hidden="true"
+            >
+              <div class="card">
+                <!-- Image -->
+                <div class="card-img">
+                  <!-- Action -->
+                  <button
+                    class="
+                      btn btn-xs btn-circle btn-white-primary
+                      card-action card-action-right
+                    "
+                    data-toggle="button"
+                  >
+                    <i class="fa fa-heart"></i>
+                  </button>
+
+                  <!-- Button -->
+                  <button
+                    class="btn btn-xs btn-block btn-dark card-btn"
+                    data-toggle="modal"
+                    data-target="#modalProduct"
+                  >
+                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
+                  </button>
+
+                  <!-- Image -->
+                  <img
+                    class="card-img-top"
+                    src="@/assets/img/products/product-6.jpg"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- Body -->
+                <div class="card-body font-weight-bold text-center">
+                  <a class="text-body" href="product.html"
+                    >Cotton floral print Dress</a
+                  >
+                  <br />
+                  <span class="text-muted">$40.00</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col"
+              style="max-width: 300px; position: absolute; left: 24.59%"
+              aria-hidden="true"
+            >
+              <div class="card">
+                <!-- Image -->
+                <div class="card-img">
+                  <!-- Action -->
+                  <button
+                    class="
+                      btn btn-xs btn-circle btn-white-primary
+                      card-action card-action-right
+                    "
+                    data-toggle="button"
+                  >
+                    <i class="fa fa-heart"></i>
+                  </button>
+
+                  <!-- Badge -->
+                  <span
+                    class="
+                      badge badge-dark
+                      card-badge card-badge-left
+                      text-uppercase
+                    "
+                  >
+                    Sale
+                  </span>
+
+                  <!-- Button -->
+                  <button
+                    class="btn btn-xs btn-block btn-dark card-btn"
+                    data-toggle="modal"
+                    data-target="#modalProduct"
+                  >
+                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
+                  </button>
+
+                  <!-- Image -->
+                  <img
+                    class="card-img-top"
+                    src="@/assets/img/products/product-10.jpg"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- Body -->
+                <div class="card-body font-weight-bold text-center">
+                  <a class="text-body" href="product.html"
+                    >Suede cross body Bag</a
+                  >
+                  <br />
+                  <span
+                    class="
+                      font-size-xs
+                      text-gray-350 text-decoration-line-through
+                    "
+                    >$85.00</span
+                  >
+                  <span class="text-primary">$49.00</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col is-selected"
+              style="max-width: 300px; position: absolute; left: 49.18%"
+            >
+              <div class="card">
+                <!-- Image -->
+                <div class="card-img">
+                  <!-- Action -->
+                  <button
+                    class="
+                      btn btn-xs btn-circle btn-white-primary
+                      card-action card-action-right
+                    "
+                    data-toggle="button"
+                  >
+                    <i class="fa fa-heart"></i>
+                  </button>
+
+                  <!-- Button -->
+                  <button
+                    class="btn btn-xs btn-block btn-dark card-btn"
+                    data-toggle="modal"
+                    data-target="#modalProduct"
+                  >
+                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
+                  </button>
+
+                  <!-- Image -->
+                  <img
+                    class="card-img-top"
+                    src="@/assets/img/products/product-32.jpg"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- Body -->
+                <div class="card-body font-weight-bold text-center">
+                  <a class="text-body" href="product.html"
+                    >Cotton leaf print Shirt</a
+                  >
+                  <br />
+                  <span class="text-muted">$65.00</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col"
+              style="max-width: 300px; position: absolute; left: 73.77%"
+              aria-hidden="true"
+            >
+              <div class="card">
+                <!-- Image -->
+                <div class="card-img">
+                  <!-- Action -->
+                  <button
+                    class="
+                      btn btn-xs btn-circle btn-white-primary
+                      card-action card-action-right
+                    "
+                    data-toggle="button"
+                  >
+                    <i class="fa fa-heart"></i>
+                  </button>
+
+                  <!-- Button -->
+                  <button
+                    class="btn btn-xs btn-block btn-dark card-btn"
+                    data-toggle="modal"
+                    data-target="#modalProduct"
+                  >
+                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
+                  </button>
+
+                  <!-- Image -->
+                  <img
+                    class="card-img-top"
+                    src="@/assets/img/products/product-7.jpg"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- Body -->
+                <div class="card-body font-weight-bold text-center">
+                  <a class="text-body" href="product.html">Leather Sneakers</a>
+                  <br />
+                  <a class="text-primary" href="#">Select Options</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col"
+              style="max-width: 300px; position: absolute; left: 98.36%"
+              aria-hidden="true"
+            >
+              <div class="card">
+                <!-- Image -->
+                <div class="card-img">
+                  <!-- Action -->
+                  <button
+                    class="
+                      btn btn-xs btn-circle btn-white-primary
+                      card-action card-action-right
+                    "
+                    data-toggle="button"
+                  >
+                    <i class="fa fa-heart"></i>
+                  </button>
+
+                  <!-- Button -->
+                  <button
+                    class="btn btn-xs btn-block btn-dark card-btn"
+                    data-toggle="modal"
+                    data-target="#modalProduct"
+                  >
+                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
+                  </button>
+
+                  <!-- Image -->
+                  <img
+                    class="card-img-top"
+                    src="@/assets/img/products/product-11.jpg"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- Body -->
+                <div class="card-body font-weight-bold text-center">
+                  <a class="text-body" href="product.html"
+                    >Another fine dress</a
+                  >
+                  <br />
+                  <span class="text-muted">$99.00</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col"
+              style="max-width: 300px; position: absolute; left: 122.95%"
+              aria-hidden="true"
+            >
+              <div class="card">
+                <!-- Image -->
+                <div class="card-img">
+                  <!-- Action -->
+                  <button
+                    class="
+                      btn btn-xs btn-circle btn-white-primary
+                      card-action card-action-right
+                    "
+                    data-toggle="button"
+                  >
+                    <i class="fa fa-heart"></i>
+                  </button>
+
+                  <!-- Button -->
+                  <button
+                    class="btn btn-xs btn-block btn-dark card-btn"
+                    data-toggle="modal"
+                    data-target="#modalProduct"
+                  >
+                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
+                  </button>
+
+                  <!-- Image -->
+                  <img
+                    class="card-img-top"
+                    src="@/assets/img/products/product-33.jpg"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- Body -->
+                <div class="card-body font-weight-bold text-center">
+                  <a class="text-body" href="product.html">Baseball Cap</a>
+                  <br />
+                  <span class="text-muted">$10.00</span>
+                </div>
+              </div>
+            </div>
+            <div
+              class="col"
+              style="max-width: 300px; position: absolute; left: 147.54%"
+              aria-hidden="true"
+            >
+              <div class="card">
+                <!-- Image -->
+                <div class="card-img">
+                  <!-- Action -->
+                  <button
+                    class="
+                      btn btn-xs btn-circle btn-white-primary
+                      card-action card-action-right
+                    "
+                    data-toggle="button"
+                  >
+                    <i class="fa fa-heart"></i>
+                  </button>
+
+                  <!-- Button -->
+                  <button
+                    class="btn btn-xs btn-block btn-dark card-btn"
+                    data-toggle="modal"
+                    data-target="#modalProduct"
+                  >
+                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
+                  </button>
+
+                  <!-- Image -->
+                  <img
+                    class="card-img-top"
+                    src="@/assets/img/products/product-49.jpg"
+                    alt="..."
+                  />
+                </div>
+
+                <!-- Body -->
+                <div class="card-body font-weight-bold text-center">
+                  <a class="text-body" href="product.html">Leather sneakers</a>
+                  <br />
+                  <span class="text-muted">$19.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="flickity-page-dots">
+          <li class="dot" aria-label="Page dot 1"></li>
+          <li class="dot" aria-label="Page dot 2"></li>
+          <li
+            class="dot is-selected"
+            aria-label="Page dot 3"
+            aria-current="step"
+          ></li>
+          <li class="dot" aria-label="Page dot 4"></li>
+          <li class="dot" aria-label="Page dot 5"></li>
+          <li class="dot" aria-label="Page dot 6"></li>
+          <li class="dot" aria-label="Page dot 7"></li>
+        </ol>
       </div>
     </section>
 
@@ -805,7 +983,52 @@
 <script>
 export default {
   name: 'BannerClassic',
-  data: () => ({})
+  data: () => ({
+    categoryWomen: [
+      {
+        image: 'product-25',
+        name: 'Dresses',
+        amount: '(58)',
+        link: 'shop.html'
+      },
+      {
+        image: 'product-26',
+        name: 'Tops',
+        amount: '(35)',
+        link: 'shop.html'
+      },
+      {
+        image: 'product-27',
+        name: 'T-shirts',
+        amount: '(27)',
+        link: 'shop.html'
+      },
+      {
+        image: 'product-28',
+        name: 'Shoes',
+        amount: '(64)',
+        link: 'shop.html'
+      },
+      {
+        image: 'product-29',
+        name: 'Jeans',
+        amount: '(12)',
+        link: 'shop.html'
+      },
+      {
+        image: 'product-125',
+        name: 'Sweatshirts',
+        amount: '(11)',
+        link: 'shop.html'
+      },
+      {
+        image: 'product-126',
+        name: 'Jackets',
+        amount: '(9)',
+        link: 'shop.html'
+      }
+    ]
+  })
 }
 </script>
 
@@ -867,6 +1090,17 @@ export default {
   border-top: 1px solid #ff6f61;
 } */
 
+/* category list styling */
+.fade {
+  transition: opacity 0.2s ease-in-out;
+}
+@media (min-width: 992px) {
+  #category-list .v-slide-group__wrapper {
+    padding-right: 6rem !important;
+    padding-left: 6rem !important;
+  }
+}
+
 /* top product styling */
 .card-circle {
   position: absolute;
@@ -911,14 +1145,35 @@ export default {
   background-color: rgba(0, 0, 0, 0);
 }
 
+/* new-arrivals section styling */
+.btn-white-primary {
+  background-color: #fff;
+  color: #111;
+}
+.btn-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(1.5rem + 1.75rem + 2px);
+  padding: 0;
+  border-radius: 50%;
+}
+.card-action {
+  position: absolute;
+  top: 1.25rem;
+  z-index: 1;
+}
+.card-action-right {
+  right: 1.25rem;
+}
+.btn-circle.btn-xs {
+  width: calc(1.40625rem + 1rem + 2px);
+}
+
 /* background overlay */
 .card-bg ~ * {
   z-index: 1;
 }
-
-/* #top-category .card-body {
-  position: absolute;
-} */
 
 /* button styling */
 #banner a {
@@ -928,4 +1183,22 @@ export default {
   font-weight: 500;
   color: #111;
 }
+.btn-xs {
+  height: calc(1.40625rem + 1rem + 2px);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+}
+.card-btn {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.card-img:hover .card-btn {
+  opacity: 1;
+}
+
+/* #top-category .card-body {
+  position: absolute;
+} */
 </style>
