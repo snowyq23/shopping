@@ -237,7 +237,7 @@
 
             <!-- Nav -->
             <div class="nav justify-content-center mb-10">
-              <a class="nav-link active" href="#topSellersTab" data-toggle="tab"
+              <a class="nav-link" href="#topSellersTab" data-toggle="tab"
                 >Women</a
               >
               <a class="nav-link" href="#topSellersTab" data-toggle="tab"
@@ -247,62 +247,75 @@
                 >Kids</a
               >
             </div>
+            <v-tabs v-model="tab" class="nav justify-content-center mb-10">
+              <v-tab v-for="item in categoryTab" :key="item">
+                <a class="nav-link" data-toggle="tab">{{ item }}</a>
+              </v-tab>
+            </v-tabs>
 
-            <!-- Content -->
-            <div class="tab-content">
-              <!-- Pane -->
-              <div class="tab-pane fade active show" id="topSellersTab">
-                <v-sheet>
-                  <!-- Slider -->
-                  <v-slide-group
-                    show-arrows
-                    class="vuetify-enabled is-draggable"
-                    style="height: 236px; touch-action: pan-y"
-                  >
-                    <!-- Item -->
+            <v-tabs-items v-model="tab">
+              <v-tab-item v-for="item in categoryTab" :key="item">
+                <!-- Content -->
+                <div class="tab-content">
+                  <!-- Pane -->
+                  <div class="tab-pane fade show" id="topSellersTab">
+                    <v-sheet>
+                      <!-- Slider -->
+                      <v-slide-group
+                        class="vuetify-enabled is-draggable"
+                        style="height: 236px; touch-action: pan-y"
+                        show-arrows
+                      >
+                        <!-- Item -->
 
-                    <!-- Item -->
+                        <!-- Item -->
 
-                    <!-- Item -->
+                        <!-- Item -->
 
-                    <!-- Item -->
+                        <!-- Item -->
 
-                    <!-- Item -->
+                        <!-- Item -->
 
-                    <!-- Item -->
+                        <!-- Item -->
 
-                    <!-- Item -->
-                    <v-slide-item v-for="(item, i) in categoryWomen" :key="i">
-                      <div class="col" style="max-width: 200px">
-                        <div class="card">
-                          <!-- Image -->
-                          <img
-                            class="card-img-top"
-                            :src="
-                              require(`@/assets/img/products/${item.image}.jpg`)
-                            "
-                            alt="..."
-                          />
+                        <!-- Item -->
+                        <v-slide-item
+                          v-for="(item, i) in categoryWomen"
+                          :key="i"
+                        >
+                          <div class="col" style="max-width: 200px">
+                            <div class="card">
+                              <!-- Image -->
+                              <img
+                                class="card-img-top"
+                                :src="
+                                  require(`@/assets/img/products/${item.image}.jpg`)
+                                "
+                                alt="..."
+                              />
 
-                          <!-- Body -->
-                          <div class="card-body py-4 px-0 text-center">
-                            <!-- Heading -->
-                            <a
-                              class="stretched-link text-body"
-                              :href="item.link"
-                            >
-                              <h6>
-                                {{ item.name }}<small>{{ item.amount }}</small>
-                              </h6>
-                            </a>
+                              <!-- Body -->
+                              <div class="card-body py-4 px-0 text-center">
+                                <!-- Heading -->
+                                <a
+                                  class="stretched-link text-body"
+                                  :href="item.link"
+                                >
+                                  <h6>
+                                    {{ item.name
+                                    }}<small>{{ item.amount }}</small>
+                                  </h6>
+                                </a>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
-                    </v-slide-item>
-                  </v-slide-group>
-                </v-sheet>
-              </div>
-            </div>
+                        </v-slide-item>
+                      </v-slide-group>
+                    </v-sheet>
+                  </div>
+                </div>
+              </v-tab-item>
+            </v-tabs-items>
           </div>
         </div>
       </div>
@@ -984,6 +997,8 @@
 export default {
   name: 'BannerClassic',
   data: () => ({
+    tab: null,
+    categoryTab: ['Women', 'Men', 'Kids'],
     categoryWomen: [
       {
         image: 'product-25',
@@ -1081,6 +1096,7 @@ export default {
 .nav-link.active:hover {
   color: #ff6f61;
 }
+
 /* .nav-link.active::before {
   content: '';
   position: absolute;
@@ -1099,6 +1115,14 @@ export default {
     padding-right: 6rem !important;
     padding-left: 6rem !important;
   }
+}
+#category-list .v-tab--active > .nav-link,
+#category-list .v-tab:hover > .nav-link {
+  color: #ff6f61;
+}
+#category-list .v-tabs-slider {
+  border-bottom-style: none;
+  border-color: #ff6f61;
 }
 
 /* top product styling */

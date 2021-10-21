@@ -406,10 +406,10 @@ export default {
 }
 @media (min-width: 992px) {
   #category-list #topSellersTab .v-slide-group__prev {
-    padding-right: 6rem !important;
+    margin-right: 6rem !important;
   }
   #category-list #topSellersTab .v-slide-group__next {
-    padding-left: 6rem !important;
+    margin-left: 6rem !important;
   }
 }
 </style>
