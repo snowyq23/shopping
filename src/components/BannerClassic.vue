@@ -236,86 +236,73 @@
             <h2 class="mb-4 text-center">Shop by Category</h2>
 
             <!-- Nav -->
-            <div class="nav justify-content-center mb-10">
-              <a class="nav-link" href="#topSellersTab" data-toggle="tab"
-                >Women</a
-              >
-              <a class="nav-link" href="#topSellersTab" data-toggle="tab"
-                >Men</a
-              >
-              <a class="nav-link" href="#topSellersTab" data-toggle="tab"
-                >Kids</a
-              >
-            </div>
             <v-tabs v-model="tab" class="nav justify-content-center mb-10">
               <v-tab v-for="item in categoryTab" :key="item">
                 <a class="nav-link" data-toggle="tab">{{ item }}</a>
               </v-tab>
             </v-tabs>
 
-            <v-tabs-items v-model="tab">
-              <v-tab-item v-for="item in categoryTab" :key="item">
-                <!-- Content -->
-                <div class="tab-content">
-                  <!-- Pane -->
-                  <div class="tab-pane fade show" id="topSellersTab">
-                    <v-sheet>
-                      <!-- Slider -->
-                      <v-slide-group
-                        class="vuetify-enabled is-draggable"
-                        style="height: 236px; touch-action: pan-y"
-                        show-arrows
-                      >
-                        <!-- Item -->
+            <!-- Content -->
+            <div class="tab-content">
+              <!-- Pane -->
+              <v-tabs-items
+                v-model="tab"
+                class="tab-pane fade show"
+                id="topSellersTab"
+              >
+                <v-tab-item v-for="item in categoryTab" :key="item">
+                  <v-sheet>
+                    <!-- Slider -->
+                    <v-slide-group
+                      class="vuetify-enabled is-draggable"
+                      show-arrows
+                    >
+                      <!-- Item -->
 
-                        <!-- Item -->
+                      <!-- Item -->
 
-                        <!-- Item -->
+                      <!-- Item -->
 
-                        <!-- Item -->
+                      <!-- Item -->
 
-                        <!-- Item -->
+                      <!-- Item -->
 
-                        <!-- Item -->
+                      <!-- Item -->
 
-                        <!-- Item -->
-                        <v-slide-item
-                          v-for="(item, i) in categoryWomen"
-                          :key="i"
-                        >
-                          <div class="col" style="max-width: 200px">
-                            <div class="card">
-                              <!-- Image -->
-                              <img
-                                class="card-img-top"
-                                :src="
-                                  require(`@/assets/img/products/${item.image}.jpg`)
-                                "
-                                alt="..."
-                              />
+                      <!-- Item -->
+                      <v-slide-item v-for="(item, i) in categoryWomen" :key="i">
+                        <div class="col" style="max-width: 200px">
+                          <div class="card">
+                            <!-- Image -->
+                            <img
+                              class="card-img-top"
+                              :src="
+                                require(`@/assets/img/products/${item.image}.jpg`)
+                              "
+                              alt="..."
+                            />
 
-                              <!-- Body -->
-                              <div class="card-body py-4 px-0 text-center">
-                                <!-- Heading -->
-                                <a
-                                  class="stretched-link text-body"
-                                  :href="item.link"
-                                >
-                                  <h6>
-                                    {{ item.name
-                                    }}<small>{{ item.amount }}</small>
-                                  </h6>
-                                </a>
-                              </div>
+                            <!-- Body -->
+                            <div class="card-body py-4 px-0 text-center">
+                              <!-- Heading -->
+                              <a
+                                class="stretched-link text-body"
+                                :href="item.link"
+                              >
+                                <h6>
+                                  {{ item.name
+                                  }}<small>{{ item.amount }}</small>
+                                </h6>
+                              </a>
                             </div>
                           </div>
-                        </v-slide-item>
-                      </v-slide-group>
-                    </v-sheet>
-                  </div>
-                </div>
-              </v-tab-item>
-            </v-tabs-items>
+                        </div>
+                      </v-slide-item>
+                    </v-slide-group>
+                  </v-sheet>
+                </v-tab-item>
+              </v-tabs-items>
+            </div>
           </div>
         </div>
       </div>
