@@ -990,43 +990,43 @@ export default {
       {
         image: 'product-25',
         name: 'Dresses',
-        amount: '(58)',
+        amount: ' (58)',
         link: 'shop.html'
       },
       {
         image: 'product-26',
         name: 'Tops',
-        amount: '(35)',
+        amount: ' (35)',
         link: 'shop.html'
       },
       {
         image: 'product-27',
         name: 'T-shirts',
-        amount: '(27)',
+        amount: ' (27)',
         link: 'shop.html'
       },
       {
         image: 'product-28',
         name: 'Shoes',
-        amount: '(64)',
+        amount: ' (64)',
         link: 'shop.html'
       },
       {
         image: 'product-29',
         name: 'Jeans',
-        amount: '(12)',
+        amount: ' (12)',
         link: 'shop.html'
       },
       {
         image: 'product-125',
         name: 'Sweatshirts',
-        amount: '(11)',
+        amount: ' (11)',
         link: 'shop.html'
       },
       {
         image: 'product-126',
         name: 'Jackets',
-        amount: '(9)',
+        amount: ' (9)',
         link: 'shop.html'
       }
     ]
