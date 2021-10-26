@@ -34,6 +34,11 @@
 
 // default property
 
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   font-family: Jost;
@@ -539,6 +544,32 @@ img {
   border-style: none;
 }
 
+//default badge
+.badge {
+  display: inline-block;
+  padding: 0.5em 1em;
+  font-size: 0.6875em;
+  font-weight: 500;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.badge-dark {
+  color: #fff;
+  background-color: #1f1f1f;
+}
+.badge {
+  letter-spacing: 0.02em;
+}
+.card-badge {
+  position: absolute;
+  top: 1.25rem;
+  z-index: 1;
+}
+
 // default card
 .card {
   position: relative;
@@ -576,6 +607,14 @@ img {
 .card-lg .card-footer {
   padding: 2rem;
 }
+.card-action {
+  position: absolute;
+  top: 1.25rem;
+  z-index: 1;
+}
+.card-action-right {
+  right: 1.25rem;
+}
 
 // default list
 .list-styled {
@@ -591,4 +630,38 @@ img {
 // default visibility
 .opacity-80 {
   opacity: 0.8;
+}
+
+// other default
+.position-static {
+  position: static !important;
+}
+.position-relative {
+  position: relative !important;
+}
+@media (min-width: 768px) {
+  .col-md-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  .col-md-7 {
+    flex: 0 0 58.33333%;
+    max-width: 58.33333%;
+  }
+  .d-md-block {
+    display: block !important;
+  }
+}
+@media (min-width: 992px) {
+  .col-lg-4 {
+    flex: 0 0 33.33333%;
+    max-width: 33.33333%;
+  }
+  .col-lg-5 {
+    flex: 0 0 41.66667%;
+    max-width: 41.66667%;
+  }
+  .offset-lg-1 {
+    margin-left: 8.33333%;
+  }
 }

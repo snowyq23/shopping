@@ -135,9 +135,8 @@ export default {
   .container,
   .container-lg,
   .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1140px;
+  .container-sm {
+    max-width: 960px;
   }
 }
 @media (min-width: 1200px) {
@@ -148,6 +147,23 @@ export default {
   .container-xl {
     max-width: 1140px;
   }
+}
+
+/* v-app styling */
+.v-application a {
+  color: #111;
+}
+#banner .btn-dark,
+#new-arrivals .btn-dark {
+  color: #fff;
+  background-color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+
+#lookbook .v-application a {
+  text-decoration: none;
+  color: #111;
+  background-color: transparent;
 }
 
 /* Column styling */
@@ -320,10 +336,6 @@ export default {
   transition: all 0.2s ease-in-out;
   transition-property: left;
 }
-
-/* .v-application a {
-  color: #111;
-} */
 
 .v-application .display-1 {
   font-size: 6.875rem !important;
