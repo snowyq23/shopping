@@ -5,11 +5,7 @@
         class="vuetify-viewport"
         style="height: 550px; touch-action: pan-y"
       >
-        <v-carousel
-          hide-delimiters
-          class="vuetify-slider"
-          style="left: 0px; transform: translateX(0%)"
-        >
+        <v-carousel hide-delimiters class="vuetify-slider">
           <v-carousel-item
             style="left: 0px; transform: translateX(0%)"
             reverse-transition="fade-transition"
@@ -430,63 +426,16 @@
         <!-- Item -->
 
         <div
-          class="flickity-viewport"
+          class="vuetify-viewport"
           style="height: 413.625px; touch-action: pan-y"
         >
-          <div
-            class="flickity-slider"
-            style="left: 0px; transform: translateX(-49.18%)"
-          >
-            <div
+          <v-slide-group class="vuetify-slider">
+            <v-slide-item
               class="col"
-              style="max-width: 300px; position: absolute; left: 0%"
+              style="max-width: 300px"
               aria-hidden="true"
-            >
-              <div class="card">
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Action -->
-                  <button
-                    class="
-                      btn btn-xs btn-circle btn-white-primary
-                      card-action card-action-right
-                    "
-                    data-toggle="button"
-                  >
-                    <i class="fa fa-heart"></i>
-                  </button>
-
-                  <!-- Button -->
-                  <button
-                    class="btn btn-xs btn-block btn-dark card-btn"
-                    data-toggle="modal"
-                    data-target="#modalProduct"
-                  >
-                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
-                  </button>
-
-                  <!-- Image -->
-                  <img
-                    class="card-img-top"
-                    src="@/assets/img/products/product-6.jpg"
-                    alt="..."
-                  />
-                </div>
-
-                <!-- Body -->
-                <div class="card-body font-weight-bold text-center">
-                  <a class="text-body" href="product.html"
-                    >Cotton floral print Dress</a
-                  >
-                  <br />
-                  <span class="text-muted">$40.00</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col"
-              style="max-width: 300px; position: absolute; left: 24.59%"
-              aria-hidden="true"
+              v-for="(item, i) in newArrivals"
+              :key="i"
             >
               <div class="card">
                 <!-- Image -->
@@ -509,6 +458,7 @@
                       card-badge card-badge-left
                       text-uppercase
                     "
+                    v-if="item.isSale"
                   >
                     Sale
                   </span>
@@ -525,252 +475,32 @@
                   <!-- Image -->
                   <img
                     class="card-img-top"
-                    src="@/assets/img/products/product-10.jpg"
+                    :src="require(`@/assets/img/products/${item.image}.jpg`)"
                     alt="..."
                   />
                 </div>
 
                 <!-- Body -->
                 <div class="card-body font-weight-bold text-center">
-                  <a class="text-body" href="product.html"
-                    >Suede cross body Bag</a
-                  >
+                  <a class="text-body" :href="item.url">{{ item.name }}</a>
                   <br />
                   <span
                     class="
                       font-size-xs
                       text-gray-350 text-decoration-line-through
                     "
-                    >$85.00</span
+                    >{{ item.retailPrice }}</span
                   >
-                  <span class="text-primary">$49.00</span>
+                  <span
+                    class="text-primary"
+                    v-if="item.discountedPrice !== null"
+                  >
+                    {{ item.discountedPrice }}</span
+                  >
                 </div>
               </div>
-            </div>
-            <div
-              class="col is-selected"
-              style="max-width: 300px; position: absolute; left: 49.18%"
-            >
-              <div class="card">
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Action -->
-                  <button
-                    class="
-                      btn btn-xs btn-circle btn-white-primary
-                      card-action card-action-right
-                    "
-                    data-toggle="button"
-                  >
-                    <i class="fa fa-heart"></i>
-                  </button>
-
-                  <!-- Button -->
-                  <button
-                    class="btn btn-xs btn-block btn-dark card-btn"
-                    data-toggle="modal"
-                    data-target="#modalProduct"
-                  >
-                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
-                  </button>
-
-                  <!-- Image -->
-                  <img
-                    class="card-img-top"
-                    src="@/assets/img/products/product-32.jpg"
-                    alt="..."
-                  />
-                </div>
-
-                <!-- Body -->
-                <div class="card-body font-weight-bold text-center">
-                  <a class="text-body" href="product.html"
-                    >Cotton leaf print Shirt</a
-                  >
-                  <br />
-                  <span class="text-muted">$65.00</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col"
-              style="max-width: 300px; position: absolute; left: 73.77%"
-              aria-hidden="true"
-            >
-              <div class="card">
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Action -->
-                  <button
-                    class="
-                      btn btn-xs btn-circle btn-white-primary
-                      card-action card-action-right
-                    "
-                    data-toggle="button"
-                  >
-                    <i class="fa fa-heart"></i>
-                  </button>
-
-                  <!-- Button -->
-                  <button
-                    class="btn btn-xs btn-block btn-dark card-btn"
-                    data-toggle="modal"
-                    data-target="#modalProduct"
-                  >
-                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
-                  </button>
-
-                  <!-- Image -->
-                  <img
-                    class="card-img-top"
-                    src="@/assets/img/products/product-7.jpg"
-                    alt="..."
-                  />
-                </div>
-
-                <!-- Body -->
-                <div class="card-body font-weight-bold text-center">
-                  <a class="text-body" href="product.html">Leather Sneakers</a>
-                  <br />
-                  <a class="text-primary" href="#">Select Options</a>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col"
-              style="max-width: 300px; position: absolute; left: 98.36%"
-              aria-hidden="true"
-            >
-              <div class="card">
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Action -->
-                  <button
-                    class="
-                      btn btn-xs btn-circle btn-white-primary
-                      card-action card-action-right
-                    "
-                    data-toggle="button"
-                  >
-                    <i class="fa fa-heart"></i>
-                  </button>
-
-                  <!-- Button -->
-                  <button
-                    class="btn btn-xs btn-block btn-dark card-btn"
-                    data-toggle="modal"
-                    data-target="#modalProduct"
-                  >
-                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
-                  </button>
-
-                  <!-- Image -->
-                  <img
-                    class="card-img-top"
-                    src="@/assets/img/products/product-11.jpg"
-                    alt="..."
-                  />
-                </div>
-
-                <!-- Body -->
-                <div class="card-body font-weight-bold text-center">
-                  <a class="text-body" href="product.html"
-                    >Another fine dress</a
-                  >
-                  <br />
-                  <span class="text-muted">$99.00</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col"
-              style="max-width: 300px; position: absolute; left: 122.95%"
-              aria-hidden="true"
-            >
-              <div class="card">
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Action -->
-                  <button
-                    class="
-                      btn btn-xs btn-circle btn-white-primary
-                      card-action card-action-right
-                    "
-                    data-toggle="button"
-                  >
-                    <i class="fa fa-heart"></i>
-                  </button>
-
-                  <!-- Button -->
-                  <button
-                    class="btn btn-xs btn-block btn-dark card-btn"
-                    data-toggle="modal"
-                    data-target="#modalProduct"
-                  >
-                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
-                  </button>
-
-                  <!-- Image -->
-                  <img
-                    class="card-img-top"
-                    src="@/assets/img/products/product-33.jpg"
-                    alt="..."
-                  />
-                </div>
-
-                <!-- Body -->
-                <div class="card-body font-weight-bold text-center">
-                  <a class="text-body" href="product.html">Baseball Cap</a>
-                  <br />
-                  <span class="text-muted">$10.00</span>
-                </div>
-              </div>
-            </div>
-            <div
-              class="col"
-              style="max-width: 300px; position: absolute; left: 147.54%"
-              aria-hidden="true"
-            >
-              <div class="card">
-                <!-- Image -->
-                <div class="card-img">
-                  <!-- Action -->
-                  <button
-                    class="
-                      btn btn-xs btn-circle btn-white-primary
-                      card-action card-action-right
-                    "
-                    data-toggle="button"
-                  >
-                    <i class="fa fa-heart"></i>
-                  </button>
-
-                  <!-- Button -->
-                  <button
-                    class="btn btn-xs btn-block btn-dark card-btn"
-                    data-toggle="modal"
-                    data-target="#modalProduct"
-                  >
-                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
-                  </button>
-
-                  <!-- Image -->
-                  <img
-                    class="card-img-top"
-                    src="@/assets/img/products/product-49.jpg"
-                    alt="..."
-                  />
-                </div>
-
-                <!-- Body -->
-                <div class="card-body font-weight-bold text-center">
-                  <a class="text-body" href="product.html">Leather sneakers</a>
-                  <br />
-                  <span class="text-muted">$19.00</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            </v-slide-item>
+          </v-slide-group>
         </div>
         <ol class="flickity-page-dots">
           <li class="dot" aria-label="Page dot 1"></li>
@@ -841,10 +571,7 @@
 
                   <!-- Item -->
                   <v-carousel-item v-for="(slide, i) in looks" :key="i">
-                    <div
-                      class="mx-auto col-12"
-                      style="max-width: 70%; max-height: 70%"
-                    >
+                    <div class="mx-auto col-12">
                       <!-- Card -->
                       <div class="card">
                         <!-- Badge -->
@@ -886,9 +613,9 @@
                               class="text-gray-350 text-decoration-line-through"
                               >$90.00</span
                             >
-                            <span class="font-size-lg text-primary">{{
-                              slide.price
-                            }}</span>
+                            <span class="font-size-lg text-primary">
+                              ${{ slide.price }}</span
+                            >
                           </div>
                         </div>
                       </div>
@@ -1148,24 +875,82 @@ export default {
     looks: [
       {
         name: 'Textured cotton Top',
-        price: '$90.00',
+        price: '90.00',
         link: 'product.html',
         leftImg: 'product-34',
         rightImg: 'product-35'
       },
       {
         name: 'Animal crossbody Bag',
-        price: '$59.00',
+        price: '59.00',
         link: 'product.html',
         leftImg: 'product-136',
         rightImg: 'product-137'
       },
       {
         name: 'Jacket with Pockets',
-        price: '$70.00',
+        price: '70.00',
         link: 'product.html',
         leftImg: 'product-138',
         rightImg: 'product-139'
+      }
+    ],
+    newArrivals: [
+      {
+        image: 'product-6',
+        url: 'product.html',
+        name: 'Cotton floral print Dress',
+        retailPrice: '$40.00',
+        discountedPrice: null,
+        isSale: false
+      },
+      {
+        image: 'product-10',
+        url: 'product.html',
+        name: 'Suede cross body Bag',
+        retailPrice: '$85.00',
+        discountedPrice: '$49.00',
+        isSale: true
+      },
+      {
+        image: 'product-32',
+        url: 'product.html',
+        name: 'Cotton leaf print Shirt',
+        retailPrice: '$65.00',
+        discountedPrice: null,
+        isSale: false
+      },
+      {
+        image: 'product-7',
+        url: 'product.html',
+        name: 'Leather Sneakers',
+        retailPrice: null,
+        discountedPrice: 'Select Options',
+        isSale: false
+      },
+      {
+        image: 'product-11',
+        url: 'product.html',
+        name: 'Another fine dress',
+        retailPrice: '$99.00',
+        discountedPrice: null,
+        isSale: false
+      },
+      {
+        image: 'product-33',
+        url: 'product.html',
+        name: 'Baseball Cap',
+        retailPrice: '$10.00',
+        discountedPrice: null,
+        isSale: false
+      },
+      {
+        image: 'product-49',
+        url: 'product.html',
+        name: 'Leather sneakers',
+        retailPrice: '$19.00',
+        discountedPrice: null,
+        isSale: false
       }
     ],
     slide: 0

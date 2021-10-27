@@ -160,6 +160,9 @@ export default {
   border-color: #1f1f1f;
 }
 
+#lookbook .v-application {
+  max-height: 650px;
+}
 #lookbook .v-application a {
   text-decoration: none;
   color: #111;
