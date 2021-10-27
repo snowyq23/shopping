@@ -441,15 +441,13 @@
                 <!-- Image -->
                 <div class="card-img">
                   <!-- Action -->
-                  <button
-                    class="
-                      btn btn-xs btn-circle btn-white-primary
-                      card-action card-action-right
-                    "
-                    data-toggle="button"
+                  <v-btn-toggle
+                    class="btn btn-xs btn-circle card-action card-action-right"
                   >
-                    <i class="fa fa-heart"></i>
-                  </button>
+                    <v-btn class="btn-xs btn-circle btn-white-primary">
+                      <i class="fa fa-heart"></i>
+                    </v-btn>
+                  </v-btn-toggle>
 
                   <!-- Badge -->
                   <span
@@ -1104,7 +1102,8 @@ export default {
   border-color: #ff6f61;
   color: #fff;
 }
-.btn-circle {
+.btn-circle,
+.v-btn-toggle .btn-circle {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1113,7 +1112,8 @@ export default {
   border-radius: 50%;
 }
 
-.btn-circle.btn-xs {
+.btn-circle.btn-xs,
+.v-btn-toggle.btn-circle.btn-xs {
   width: calc(1.40625rem + 1rem + 2px);
 }
 #new-arrivals .card-action {
