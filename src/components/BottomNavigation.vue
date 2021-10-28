@@ -320,5 +320,17 @@ img.footer-payment {
   margin-right: 0.5rem;
 }
 
-/* Spacing styling */
+/* Hover styling */
+.text-gray-300[href]:hover {
+  color: #a6a6a6 !important;
+}
+.text-gray-350[href]:hover {
+  color: #909090 !important;
+}
+.btn-gray-500:focus,
+.btn-gray-500:hover {
+  background-color: #4c4c4c;
+  border-color: #4c4c4c;
+  color: #fff;
+}
 </style>
