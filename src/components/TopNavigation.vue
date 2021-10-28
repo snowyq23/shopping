@@ -10,6 +10,214 @@
               :key="i"
             >
               <a class="nav-link" :href="item.link">{{ item.text }}</a>
+
+              <!-- dropdown menu section -->
+              <!-- OF `Home`, `Pages`, `Blog` -->
+              <div
+                class="dropdown-menu"
+                v-if="
+                  item.text === 'Home' ||
+                  item.text === 'Pages' ||
+                  item.text === 'Blog'
+                "
+              >
+                <div class="card card-lg">
+                  <div class="card-body">
+                    <ul class="list-styled font-size-sm">
+                      <li
+                        class="list-styled-item"
+                        v-for="(opt, j) in item.list"
+                        :key="j"
+                      >
+                        <a class="list-styled-link" :href="opt.href">{{
+                          opt.option
+                        }}</a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OF `Catalog` -->
+              <div class="dropdown-menu w-100" v-if="item.text === 'Catalog'">
+                <div class="card card-lg">
+                  <div class="card-body">
+                    <div class="container">
+                      <div class="row">
+                        <div
+                          class="col-4 col-md"
+                          v-for="(tab, j) in item.listByCategory"
+                          :key="j"
+                        >
+                          <!-- Heading -->
+                          <div class="mb-5 font-weight-bold">
+                            {{ tab.heading }}
+                          </div>
+
+                          <!-- Links -->
+                          <ul class="list-styled mb-0 font-size-sm">
+                            <li
+                              class="list-styled-item"
+                              v-for="(opt, k) in tab.options"
+                              :key="k"
+                            >
+                              <a class="list-styled-link" :href="opt.href">{{
+                                opt.option
+                              }}</a>
+                            </li>
+                          </ul>
+                        </div>
+                        <div class="d-none d-md-flex flex-column col-md-3">
+                          <!-- Card -->
+                          <div
+                            class="card mb-7 bg-cover"
+                            style="min-height: 150px"
+                          >
+                            <!-- Background -->
+                            <div class="card-bg">
+                              <div
+                                class="card-bg-img bg-cover"
+                                :style="{
+                                  'background-image': `url(${require('@/assets/img/products/product-2.jpg')})`,
+                                  height: '100%',
+                                  width: '100%'
+                                }"
+                              ></div>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="card-body my-auto px-7">
+                              <a
+                                class="
+                                  stretched-link
+                                  font-weight-bold
+                                  text-body
+                                "
+                                href="./shop.html"
+                              >
+                                Men's Shirts
+                              </a>
+                            </div>
+                          </div>
+
+                          <!-- Card -->
+                          <div class="card bg-cover" style="min-height: 150px">
+                            <!-- Background -->
+                            <div class="card-bg">
+                              <div
+                                class="card-bg-img bg-cover"
+                                style="
+                                  background-image: url(assets/img/products/product-3.jpg);
+                                "
+                              ></div>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="card-body my-auto px-7">
+                              <a
+                                class="
+                                  stretched-link
+                                  font-weight-bold
+                                  text-body
+                                "
+                                href="./shop.html"
+                              >
+                                Floral Dresses
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="d-none d-md-flex flex-column col-md-3">
+                          <!-- Card -->
+                          <div class="card bg-cover" style="min-height: 330px">
+                            <!-- Background -->
+                            <div class="card-bg">
+                              <div
+                                class="card-bg-img bg-cover"
+                                style="
+                                  background-image: url(@/assets/img/products/product-111.jpg);
+                                "
+                              ></div>
+                            </div>
+
+                            <!-- Body -->
+                            <div class="card-body my-auto text-center">
+                              <a
+                                class="stretched-link text-white"
+                                href="./shop.html"
+                              >
+                                <h1
+                                  class="mb-1 font-weight-bolder text-uppercase"
+                                >
+                                  50% off
+                                </h1>
+                                <h6>Women’s Watches</h6>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- OF `Shop` -->
+              <div
+                class="dropdown-menu"
+                style="min-width: 650px"
+                v-if="item.text === 'Shop'"
+              >
+                <div class="card card-lg">
+                  <div class="card-body">
+                    <div class="row">
+                      <div class="col" v-for="(tab, i) in item.list" :key="i">
+                        <!-- Heading -->
+                        <div
+                          class="mb-5 font-weight-bold"
+                          v-if="tab.col[0].heading !== null"
+                        >
+                          {{ tab.col[0].heading }}
+                        </div>
+
+                        <!-- Links -->
+                        <ul class="list-styled mb-7 font-size-sm">
+                          <li
+                            class="list-styled-item"
+                            v-for="(opt, j) in tab.col[0].options"
+                            :key="j"
+                          >
+                            <a class="list-styled-link" :href="opt.href">{{
+                              opt.option
+                            }}</a>
+                          </li>
+                        </ul>
+
+                        <!-- Heading -->
+                        <div
+                          class="mb-5 font-weight-bold"
+                          v-if="tab.col[1].heading !== null"
+                        >
+                          {{ tab.col[1].heading }}
+                        </div>
+
+                        <!-- Links -->
+                        <ul class="list-styled mb-7 font-size-sm">
+                          <li
+                            class="list-styled-item"
+                            v-for="(opt, j) in tab.col[1].options"
+                            :key="j"
+                          >
+                            <a class="list-styled-link" :href="opt.href">{{
+                              opt.option
+                            }}</a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </li>
           </ul>
           <a
@@ -144,23 +352,332 @@ export default {
     menu: [
       {
         link: '#!',
-        text: 'Home'
+        text: 'Home',
+        list: [
+          { option: 'Default', href: './index.html' },
+          { option: 'Classic', href: './index-classic.html' },
+          { option: 'Fashion', href: './index-fashion.html' },
+          { option: 'Boxed', href: './index-boxed.html' },
+          { option: 'Simple', href: './index-simple.html' },
+          { option: 'Asymmetric', href: './index-asymmetric.html' },
+          { option: 'Sidenav', href: './index-sidenav.html' },
+          { option: 'Landing', href: './index-landing.html' }
+        ]
       },
       {
         link: '#!',
-        text: 'Catalog'
+        text: 'Catalog',
+        listByCategory: [
+          {
+            heading: 'Women',
+            options: [
+              {
+                option: 'Clothing',
+                href: './shop.html'
+              },
+              {
+                option: 'Shoes',
+                href: './shop.html'
+              },
+              {
+                option: 'Dresses',
+                href: './shop.html'
+              },
+              {
+                option: 'Bags',
+                href: './shop.html'
+              },
+              {
+                option: 'Accessories',
+                href: './shop.html'
+              },
+              {
+                option: 'Sunglasses',
+                href: './shop.html'
+              },
+              {
+                option: 'Denim',
+                href: './shop.html'
+              },
+              {
+                option: 'Boots',
+                href: './shop.html'
+              },
+              {
+                option: 'Jewelry',
+                href: './shop.html'
+              }
+            ]
+          },
+          {
+            heading: 'Men',
+            options: [
+              {
+                option: 'Clothing',
+                href: './shop.html'
+              },
+              {
+                option: 'Shoes',
+                href: './shop.html'
+              },
+              {
+                option: 'Coats & Jackets',
+                href: './shop.html'
+              },
+              {
+                option: 'Bags',
+                href: './shop.html'
+              },
+              {
+                option: 'Accessories',
+                href: './shop.html'
+              },
+              {
+                option: 'Sunglasses',
+                href: './shop.html'
+              },
+              {
+                option: 'Denim',
+                href: './shop.html'
+              },
+              {
+                option: 'Sneakers',
+                href: './shop.html'
+              },
+              {
+                option: 'Watches',
+                href: './shop.html'
+              }
+            ]
+          },
+          {
+            heading: 'Kids',
+            options: [
+              {
+                option: 'Clothing',
+                href: './shop.html'
+              },
+              {
+                option: 'Shoes',
+                href: './shop.html'
+              },
+              {
+                option: 'Accessories',
+                href: './shop.html'
+              },
+              {
+                option: 'Sunglasses',
+                href: './shop.html'
+              },
+              {
+                option: 'Denim',
+                href: './shop.html'
+              },
+              {
+                option: 'Boots',
+                href: './shop.html'
+              }
+            ]
+          }
+        ]
       },
       {
         link: '#!',
-        text: 'Shop'
+        text: 'Shop',
+        list: [
+          {
+            col: [
+              {
+                heading: 'Shop',
+                options: [
+                  {
+                    option: 'Default',
+                    href: './shop.html'
+                  },
+                  {
+                    option: 'Topbar',
+                    href: './shop-topbar.html'
+                  },
+
+                  {
+                    option: 'Collapse',
+                    href: './shop-collapse.html'
+                  },
+                  {
+                    option: 'Simple',
+                    href: './shop-simple.html'
+                  },
+                  {
+                    option: 'Masonry',
+                    href: './shop-masonry.html'
+                  }
+                ]
+              },
+              {
+                heading: 'Product',
+                options: [
+                  {
+                    option: 'Default',
+                    href: './product.html'
+                  },
+                  {
+                    option: 'Images Left',
+                    href: './product-images-left.html'
+                  },
+
+                  {
+                    option: 'Image Grid',
+                    href: './product-image-grid.html'
+                  },
+                  {
+                    option: 'Image Slider',
+                    href: './product-image-slider.html'
+                  },
+                  {
+                    option: 'Images Stacked',
+                    href: './product-images-stacked.html'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                heading: 'Support',
+                options: [
+                  {
+                    option: 'Shopping Cart',
+                    href: './shopping-cart.html'
+                  },
+                  {
+                    option: 'Checkout',
+                    href: './checkout.html'
+                  },
+
+                  {
+                    option: 'Order Completed',
+                    href: './order-completed.html'
+                  },
+                  {
+                    option: 'Shipping & Returns',
+                    href: './shipping-and-returns.html'
+                  }
+                ]
+              },
+              {
+                heading: 'Account',
+                options: [
+                  {
+                    option: 'Order',
+                    href: './account-order.html'
+                  },
+                  {
+                    option: 'Orders',
+                    href: './account-orders.html'
+                  },
+
+                  {
+                    option: 'Wishlist',
+                    href: './account-wishlist.html'
+                  },
+                  {
+                    option: 'Personal Info',
+                    href: './account-personal-info.html'
+                  },
+                  {
+                    option: 'Addresses',
+                    href: './account-addresses.html'
+                  },
+                  {
+                    option: 'Addresses: New',
+                    href: './account-addresses-edit.html'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            col: [
+              {
+                heading: null,
+                options: [
+                  {
+                    option: 'Payment',
+                    href: './account-Payment.html'
+                  },
+                  {
+                    option: 'Payment: New',
+                    href: './account-payment-edit.html'
+                  },
+
+                  {
+                    option: 'Payment: Choose',
+                    href: './account-payment-choose.html'
+                  },
+                  {
+                    option: 'Auth',
+                    href: './auth.html'
+                  }
+                ]
+              },
+              {
+                heading: 'Modals',
+                options: [
+                  {
+                    option: 'Newsletter: Horizontal',
+                    href: '#modalNewsletterHorizontal'
+                  },
+                  {
+                    option: 'Newsletter: Vertical',
+                    href: '#modalNewsletterHorizontal'
+                  },
+
+                  {
+                    option: 'Product',
+                    href: '#modalProduct'
+                  },
+                  {
+                    option: 'Search',
+                    href: '#modalSearch'
+                  },
+                  {
+                    option: 'Shopping Cart',
+                    href: '#modalShoppingCart'
+                  },
+                  {
+                    option: 'Size Chart',
+                    href: '#modalSizeChart'
+                  },
+                  {
+                    option: 'Wait List',
+                    href: '#modalWaitList'
+                  }
+                ]
+              }
+            ]
+          }
+        ]
       },
       {
         link: '#!',
-        text: 'Pages'
+        text: 'Pages',
+        list: [
+          { option: 'About', href: './about.html' },
+          { option: 'Contact Us', href: './contact-us.html' },
+          { option: 'Store Locator', href: './store-locator.html' },
+          { option: 'FAQ', href: './faq.html' },
+          { option: 'Coming Soon', href: './coming-soon.html' },
+          { option: '404', href: './404.html' }
+        ]
       },
       {
         link: '#!',
-        text: 'Blog'
+        text: 'Blog',
+        list: [
+          { option: 'Blog', href: './blog.html' },
+          { option: 'Blog Post', href: './blog-post.html' }
+        ]
       },
       {
         link: './docs/getting-started.html',
@@ -263,5 +780,13 @@ ul.navbar-nav {
   flex-basis: 100%;
   flex-grow: 1;
   align-items: center;
+}
+
+.navbar-nav > .dropdown.position-static > .dropdown-menu::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  height: calc(1.5rem + 1px);
+  width: 100%;
 }
 </style>
