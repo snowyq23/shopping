@@ -1,7 +1,6 @@
 <template>
-  <div>
+  <div id="bottom-navigation">
     <footer
-      id="bottom-navigation"
       class="bg-dark bg-cover @@classList"
       :style="{
         'background-image': `url(${require('@/assets/img/patterns/pattern-2.svg')})`

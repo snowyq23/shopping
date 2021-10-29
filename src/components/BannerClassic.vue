@@ -1019,9 +1019,7 @@ export default {
 } */
 
 /* category list styling */
-.fade {
-  transition: opacity 0.2s ease-in-out;
-}
+
 @media (min-width: 992px) {
   #category-list .v-slide-group__wrapper {
     padding-right: 6rem !important;

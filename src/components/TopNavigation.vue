@@ -331,12 +331,13 @@
                 <i class="fa fa-heart"></i>
               </a>
             </li>
-            <li class="nav-item ml-lg-n4">
-              <a class="nav-link" data-toggle="modal" href="#modalShoppingCart">
+            <li class="nav-item ml-lg-n4" @click.stop="showShoppingCart = true">
+              <a class="nav-link" href="#modalShoppingCart">
                 <span data-cart-items="2">
                   <i class="fa fa-shopping-cart"></i>
                 </span>
               </a>
+              <shopping-cart v-model="showShoppingCart" />
             </li>
           </ul>
         </div>
@@ -346,6 +347,8 @@
 </template>
 
 <script>
+import ShoppingCart from '../components/ShoppingCart'
+
 export default {
   name: 'TopNavigation',
   data: () => ({
@@ -706,8 +709,12 @@ export default {
       { href: '#', text: 'English' },
       { href: '#', text: 'French' },
       { href: '#', text: 'German' }
-    ]
-  })
+    ],
+    showShoppingCart: false
+  }),
+  components: {
+    ShoppingCart
+  }
 }
 </script>
 
