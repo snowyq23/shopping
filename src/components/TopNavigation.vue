@@ -337,7 +337,7 @@
                   <i class="fa fa-shopping-cart"></i>
                 </span>
               </a>
-              <shopping-cart v-model="showShoppingCart" />
+              <cart v-model="showShoppingCart" />
             </li>
           </ul>
         </div>
@@ -347,7 +347,7 @@
 </template>
 
 <script>
-import ShoppingCart from '../components/ShoppingCart'
+import Cart from '../components/Cart'
 
 export default {
   name: 'TopNavigation',
@@ -713,7 +713,7 @@ export default {
     showShoppingCart: false
   }),
   components: {
-    ShoppingCart
+    Cart
   }
 }
 </script>
