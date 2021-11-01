@@ -37,56 +37,8 @@ export default {
 </script>
 
 <style>
-.d-flex {
-  display: flex !important;
-}
-.flex-row {
-  flex-direction: row !important;
-}
-.flex-column {
-  flex-direction: column !important;
-}
-.heading-xxs {
-  font-size: 0.8125rem;
-  font-weight: 500;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-}
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  margin-right: -1rem;
-  margin-left: -1rem;
-}
-
-.justify-content-center {
-  justify-content: center !important;
-}
-.justify-content-end {
-  justify-content: flex-end !important;
-}
-
 .fade {
   transition: opacity 0.2s ease-in-out;
-}
-
-.dropdown-menu {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: 1000;
-  display: none;
-  float: left;
-  min-width: 200px;
-  padding: 0 0;
-  margin: 0 0 0;
-  font-size: 1rem;
-  color: #111;
-  text-align: left;
-  list-style: none;
-  background-color: #fff;
-  background-clip: padding-box;
-  border: 1px solid #e5e5e5;
 }
 
 .card-bg {
@@ -359,74 +311,6 @@ export default {
 }
 
 /* container styling */
-.navbar .container,
-.navbar .container-fluid,
-.navbar .container-lg,
-.navbar .container-md,
-.navbar .container-sm,
-.navbar .container-xl {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-}
-@media (min-width: 1200px) {
-  .navbar-expand-xl {
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-  }
-  .navbar-expand-xl > .container,
-  .navbar-expand-xl > .container-fluid,
-  .navbar-expand-xl > .container-lg,
-  .navbar-expand-xl > .container-md,
-  .navbar-expand-xl > .container-sm,
-  .navbar-expand-xl > .container-xl {
-    flex-wrap: nowrap;
-  }
-  .navbar-expand-xl .navbar-collapse {
-    display: flex !important;
-    flex-basis: auto;
-  }
-  .navbar:not(.navbar-vertical).navbar-expand-xl .navbar-nav:first-child {
-    margin-left: -1rem;
-  }
-  .navbar:not(.navbar-vertical).navbar-expand-xl .navbar-nav:last-child {
-    margin-right: -1rem;
-  }
-  .navbar-expand-xl .navbar-nav {
-    flex-direction: row;
-  }
-  .navbar-expand-xl .navbar-nav .nav-link {
-    padding-right: 1rem;
-    padding-left: 1rem;
-  }
-
-  .navbar-expand-xl .navbar-nav .dropdown-menu {
-    position: absolute;
-  }
-  .navbar-nav .dropdown > .dropdown-menu,
-  .navbar-nav .dropright > .dropdown-menu {
-    display: block !important;
-    visibility: hidden;
-    transform-origin: top center;
-    opacity: 0;
-  }
-  .navbar-nav .dropdown > .dropdown-menu {
-    left: 50%;
-    transform: translate(-50%, 0.5rem);
-  }
-  .navbar-nav .dropdown.hovered:hover .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
-    z-index: 1;
-    transition: all 0.2s ease-in-out;
-    transition-property: visibility, transform, opacity;
-  }
-
-  .d-xl-block {
-    display: block !important;
-  }
-}
 @media (min-width: 992px) {
   #category-list #topSellersTab .v-slide-group__prev {
     margin-right: 6rem !important;

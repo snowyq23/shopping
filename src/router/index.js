@@ -27,6 +27,14 @@ const routes = [
       import(
         /* webpackChunkName: "index-classic" */ '../views/Index-Classic.vue'
       )
+  },
+  {
+    path: '/shopping-cart',
+    name: 'Shopping-Cart',
+    component: () =>
+      import(
+        /* webpackChunkName: "shopping-cart" */ '../views/Shopping-Cart.vue'
+      )
   }
 ]
 

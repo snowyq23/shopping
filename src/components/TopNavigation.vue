@@ -719,41 +719,18 @@ export default {
 </script>
 
 <style scoped>
-.navbar {
-  position: relative;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1.5rem 1rem;
-}
-.navbar-nav {
-  display: flex;
-  flex-direction: column;
-  padding-left: 0;
-  margin-bottom: 0;
-  list-style: none;
-}
-.navbar-nav .nav-link {
-  font-weight: 500;
-  outline: 0;
-  box-shadow: none;
-}
-.nav-link {
-  display: block;
-  padding: 0.5rem 1rem;
-}
-.navbar-light .navbar-brand {
-  color: #111;
-}
-.navbar-brand {
-  font-weight: 300;
-}
+/* // logo // */
 .navbar-brand {
   display: inline-block;
   font-size: 1.75rem;
   line-height: inherit;
   white-space: nowrap;
+}
+.navbar-brand {
+  font-weight: 300;
+}
+.navbar-light .navbar-brand {
+  color: #111;
 }
 
 ul.navbar-nav {
@@ -766,27 +743,6 @@ ul.navbar-nav {
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
   color: #ff6f61;
-}
-/* .dropdown {
-  display: inline-block;
-} */
-
-.dropdown,
-.dropleft,
-.dropright,
-.dropup {
-  position: relative;
-}
-
-/* .dropdown-toggle,
-.dropright-toggle {
-  overflow: hidden;
-} */
-
-.navbar-collapse {
-  flex-basis: 100%;
-  flex-grow: 1;
-  align-items: center;
 }
 
 .navbar-nav > .dropdown.position-static > .dropdown-menu::before {

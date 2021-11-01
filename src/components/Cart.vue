@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- /consider changing to v-navigation-drawer -->
     <v-dialog
       id="modalShoppingCart"
       class="modal"
