@@ -232,9 +232,13 @@
             <h2 class="mb-4 text-center">Shop by Category</h2>
 
             <!-- Nav -->
-            <v-tabs v-model="tab" class="nav justify-content-center mb-10">
-              <v-tab v-for="item in categoryTab" :key="item">
-                <a class="nav-link" data-toggle="tab">{{ item }}</a>
+            <v-tabs
+              v-model="tab"
+              class="nav justify-content-center mb-10"
+              slider-color="#ff6f61"
+            >
+              <v-tab v-for="item in categoryTab" :key="item" class="tab">
+                <a class="nav-link">{{ item }}</a>
               </v-tab>
             </v-tabs>
 
@@ -246,7 +250,11 @@
                 class="tab-pane fade show"
                 id="topSellersTab"
               >
-                <v-tab-item v-for="item in categoryTab" :key="item">
+                <v-tab-item
+                  v-for="item in categoryTab"
+                  :key="item"
+                  transition="fade-transition"
+                >
                   <v-sheet>
                     <!-- Slider -->
                     <v-slide-group
@@ -1009,15 +1017,6 @@ export default {
   color: #ff6f61;
 }
 
-/* .nav-link.active::before {
-  content: '';
-  position: absolute;
-  left: 0.75rem;
-  right: 0.75rem;
-  bottom: 0.25rem;
-  border-top: 1px solid #ff6f61;
-} */
-
 /* category list styling */
 
 @media (min-width: 992px) {
@@ -1029,10 +1028,6 @@ export default {
 #category-list .v-tab--active > .nav-link,
 #category-list .v-tab:hover > .nav-link {
   color: #ff6f61;
-}
-#category-list .v-tabs-slider {
-  border-bottom-style: none;
-  border-color: #ff6f61;
 }
 
 /* top product styling */
@@ -1059,8 +1054,6 @@ export default {
 }
 .card-body .btn > .fa-arrow-right {
   display: inline-block;
-  transform: translateX(20%);
-  transition: 1s;
   transition: all 0.2s ease-in-out;
   transition-property: transform;
 }

@@ -1,5 +1,5 @@
 <template>
-  <div id="top-navigation">
+  <div id="top-nav-classic">
     <nav class="navbar navbar-expand-xl navbar-light @@classList">
       <div class="container">
         <div class="collapse navbar-collapse" id="navbarClassicCollapse">
@@ -8,6 +8,10 @@
               class="nav-item dropdown hovered"
               v-for="(item, i) in menu"
               :key="i"
+              :class="{
+                'dropdown hovered': item.text === 'Docs',
+                'position-static': item.isStatic
+              }"
             >
               <a class="nav-link" :href="item.link">{{ item.text }}</a>
 
@@ -350,7 +354,7 @@
 import Cart from '../components/Cart'
 
 export default {
-  name: 'TopNavigation',
+  name: 'TopNavClassic',
   data: () => ({
     menu: [
       {
@@ -365,7 +369,8 @@ export default {
           { option: 'Asymmetric', href: './index-asymmetric.html' },
           { option: 'Sidenav', href: './index-sidenav.html' },
           { option: 'Landing', href: './index-landing.html' }
-        ]
+        ],
+        isStatic: false
       },
       {
         link: '#!',
@@ -482,7 +487,8 @@ export default {
               }
             ]
           }
-        ]
+        ],
+        isStatic: true
       },
       {
         link: '#!',
@@ -660,7 +666,8 @@ export default {
               }
             ]
           }
-        ]
+        ],
+        isStatic: false
       },
       {
         link: '#!',
@@ -672,7 +679,8 @@ export default {
           { option: 'FAQ', href: './faq.html' },
           { option: 'Coming Soon', href: './coming-soon.html' },
           { option: '404', href: './404.html' }
-        ]
+        ],
+        isStatic: false
       },
       {
         link: '#!',
@@ -680,11 +688,13 @@ export default {
         list: [
           { option: 'Blog', href: './blog.html' },
           { option: 'Blog Post', href: './blog-post.html' }
-        ]
+        ],
+        isStatic: false
       },
       {
         link: './docs/getting-started.html',
-        text: 'Docs'
+        text: 'Docs',
+        isStatic: false
       }
     ],
     regions: [
@@ -743,13 +753,5 @@ ul.navbar-nav {
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
   color: #ff6f61;
-}
-
-.navbar-nav > .dropdown.position-static > .dropdown-menu::before {
-  content: '';
-  position: absolute;
-  bottom: 100%;
-  height: calc(1.5rem + 1px);
-  width: 100%;
 }
 </style>
