@@ -749,7 +749,7 @@
       </div>
     </section>
 
-    <section id="service" class="py-9">
+    <section id="features" class="py-9">
       <div class="container">
         <div class="row">
           <div class="col-12 col-md-6 col-lg-3">

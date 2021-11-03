@@ -190,6 +190,10 @@ export default {
   outline: 0;
   margin-left: auto;
 }
+.v-dialog--fullscreen {
+  right: 0;
+  /* ^ To prevent the uncorrect left side in web-app */
+}
 
 /* // modal // */
 .modal-content {
