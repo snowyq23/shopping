@@ -263,6 +263,7 @@ img.footer-payment {
   border: 1px solid #e5e5e5;
   border-radius: 0;
   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  outline: none;
 }
 
 .form-control-lg {
@@ -379,9 +380,5 @@ img.footer-payment {
     flex: 0 0 50%;
     max-width: 50%;
   }
-}
-
-input[type='email']:focus-visible {
-  border-color: transparent;
 }
 </style>
