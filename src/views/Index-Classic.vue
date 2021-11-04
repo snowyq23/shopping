@@ -22,16 +22,16 @@
 
 <script>
 import TopNavClassic from '../components/TopNavClassic'
-import BottomNavigation from '../components/BottomNavigation'
 import BannerClassic from '../components/BannerClassic'
+import BottomNavigation from '../components/BottomNavigation'
 
 export default {
   name: 'Index-Classic',
   data: () => ({}),
   components: {
     TopNavClassic,
-    BottomNavigation,
-    BannerClassic
+    BannerClassic,
+    BottomNavigation
   }
 }
 </script>

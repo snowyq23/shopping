@@ -172,82 +172,7 @@
     </section>
 
     <!-- FEATURES -->
-    <section id="features" class="bg-light py-9">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-md-6 col-lg-3">
-            <!-- Item -->
-            <div class="d-flex mb-6 mb-lg-0">
-              <!-- Icon -->
-              <i class="fa fa-truck font-size-lg text-primary"></i>
-
-              <!-- Body -->
-              <div class="ml-6">
-                <!-- Heading -->
-                <h6 class="heading-xxs mb-1">Free shipping</h6>
-
-                <!-- Text -->
-                <p class="mb-0 font-size-sm text-muted">
-                  From all orders over $100
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-            <!-- Item -->
-            <div class="d-flex mb-6 mb-lg-0">
-              <!-- Icon -->
-              <i class="fa fa-exchange-alt font-size-lg text-primary"></i>
-
-              <!-- Body -->
-              <div class="ml-6">
-                <!-- Heading -->
-                <h6 class="mb-1 heading-xxs">Free returns</h6>
-
-                <!-- Text -->
-                <p class="mb-0 font-size-sm text-muted">
-                  Return money within 30 days
-                </p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-            <!-- Item -->
-            <div class="d-flex mb-6 mb-md-0">
-              <!-- Icon -->
-              <i class="fa fa-lock font-size-lg text-primary"></i>
-
-              <!-- Body -->
-              <div class="ml-6">
-                <!-- Heading -->
-                <h6 class="mb-1 heading-xxs">Secure shopping</h6>
-
-                <!-- Text -->
-                <p class="mb-0 font-size-sm text-muted">You're in safe hands</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-12 col-md-6 col-lg-3">
-            <!-- Item -->
-            <div class="d-flex">
-              <!-- Icon -->
-              <i class="fa fa-tag font-size-lg text-primary"></i>
-
-              <!-- Body -->
-              <div class="ml-6">
-                <!-- Heading -->
-                <h6 class="mb-1 heading-xxs">Over 10,000 Styles</h6>
-
-                <!-- Text -->
-                <p class="mb-0 font-size-sm text-muted">
-                  We have everything you need
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+    <features />
 
     <!-- FOOTER -->
     <bottom-navigation />
@@ -255,8 +180,9 @@
 </template>
 
 <script>
-import BottomNavigation from '../components/BottomNavigation.vue'
 import TopNavGeneral from '../components/TopNavGeneral.vue'
+import Features from '../components/Features.vue'
+import BottomNavigation from '../components/BottomNavigation.vue'
 
 export default {
   name: 'Cart',
@@ -288,7 +214,8 @@ export default {
         price: '$49.00',
         details: ['Color: Brown']
       }
-    ]
+    ],
+    isBackgroundLight: true
   }),
   methods: {
     productDetail: function (val) {
@@ -303,8 +230,9 @@ export default {
     }
   },
   components: {
-    BottomNavigation,
-    TopNavGeneral
+    TopNavGeneral,
+    Features,
+    BottomNavigation
   }
 }
 </script>
