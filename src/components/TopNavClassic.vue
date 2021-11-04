@@ -737,7 +737,7 @@ export default {
   white-space: nowrap;
 }
 .navbar-brand {
-  font-weight: 300;
+  font-weight: 600;
 }
 .navbar-light .navbar-brand {
   color: #111;

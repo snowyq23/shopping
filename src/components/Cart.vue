@@ -60,7 +60,7 @@
 
                     <!-- Remove -->
                     <a class="font-size-xs text-gray-400 ml-auto" href="#!">
-                      <i class="fa fa-x"></i> Remove
+                      <i class="fa fa-times"></i> Remove
                     </a>
                   </div>
                 </div>

@@ -1,5 +1,5 @@
 <template>
-  <div id="main">
+  <div id="classic">
     <div id="announcement" class="py-3 bg-dark bg-pattern @@classList">
       <div class="container">
         <div class="row">

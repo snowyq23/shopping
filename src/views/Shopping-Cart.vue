@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="shopping-cart">
     <!-- NAVBAR -->
     <top-nav-general />
 
@@ -35,13 +35,15 @@
           <div class="col-12 col-md-7">
             <!-- List group -->
             <ul class="list-group list-group-lg list-group-flush-x mb-6">
-              <li class="list-group-item">
+              <li class="list-group-item" v-for="(item, i) in cart" :key="i">
                 <div class="row align-items-center">
                   <div class="col-3">
                     <!-- Image -->
-                    <a href="product.html">
+                    <a :href="item.link">
                       <img
-                        src="@/assets/img/products/product-6.jpg"
+                        :src="
+                          require(`@/assets/img/products/${item.image}.jpg`)
+                        "
                         alt="..."
                         class="img-fluid"
                       />
@@ -50,16 +52,13 @@
                   <div class="col">
                     <!-- Title -->
                     <div class="d-flex mb-2 font-weight-bold">
-                      <a class="text-body" href="product.html"
-                        >Cotton floral print</a
-                      >
-                      <span class="ml-auto">$40.00</span>
+                      <a class="text-body" :href="item.link">{{ item.name }}</a>
+                      <span class="ml-auto">{{ item.price }}</span>
                     </div>
 
                     <!-- Text -->
-                    <p class="mb-7 font-size-sm text-muted">
-                      Size: M <br />
-                      Color: Red
+                    <p class="mb-7 font-size-sm text-muted" id="productDetail">
+                      {{ productDetail(item.details) }}
                     </p>
 
                     <!--Footer -->
@@ -73,48 +72,7 @@
 
                       <!-- Remove -->
                       <a class="font-size-xs text-gray-400 ml-auto" href="#!">
-                        <i class="fe fe-x"></i> Remove
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </li>
-              <li class="list-group-item">
-                <div class="row align-items-center">
-                  <div class="col-3">
-                    <!-- Image -->
-                    <a href="product.html">
-                      <img
-                        src="@/assets/img/products/product-10.jpg"
-                        alt="..."
-                        class="img-fluid"
-                      />
-                    </a>
-                  </div>
-                  <div class="col">
-                    <!-- Title -->
-                    <div class="d-flex mb-2 font-weight-bold">
-                      <a class="text-body" href="product.html"
-                        >Suede cross body Bag</a
-                      >
-                      <span class="ml-auto">$49.00</span>
-                    </div>
-
-                    <!-- Text -->
-                    <p class="mb-7 font-size-sm text-muted">Color: Brown</p>
-
-                    <!--Footer -->
-                    <div class="d-flex align-items-center">
-                      <!-- Select -->
-                      <select class="custom-select custom-select-xxs w-auto">
-                        <option value="1">1</option>
-                        <option value="1">2</option>
-                        <option value="1">3</option>
-                      </select>
-
-                      <!-- Remove -->
-                      <a class="font-size-xs text-gray-400 ml-auto" href="#!">
-                        <i class="fe fe-x"></i> Remove
+                        <i class="fa fa-times"></i> Remove
                       </a>
                     </div>
                   </div>
@@ -206,7 +164,7 @@
 
             <!-- Link -->
             <a class="btn btn-link btn-sm px-0 text-body" href="shop.html">
-              <i class="fe fe-arrow-left mr-2"></i> Continue Shopping
+              <i class="fa fa-arrow-left mr-2"></i> Continue Shopping
             </a>
           </div>
         </div>
@@ -314,8 +272,36 @@ export default {
         disabled: true,
         href: 'shoppingcart.html'
       }
+    ],
+    cart: [
+      {
+        name: 'Cotton floral print',
+        link: './product.html',
+        image: 'product-6',
+        price: '$40.00',
+        details: ['Size: M', 'Color: Red']
+      },
+      {
+        name: 'Suede cross body Bag',
+        link: './product.html',
+        image: 'product-10',
+        price: '$49.00',
+        details: ['Color: Brown']
+      }
     ]
   }),
+  methods: {
+    productDetail: function (val) {
+      if (val.length === 0) {
+        return null
+      } else if (val.length === 1) {
+        return val.toString()
+      } else {
+        val = val.join('\n')
+        return val
+      }
+    }
+  },
   components: {
     BottomNavigation,
     TopNavGeneral
@@ -373,5 +359,94 @@ export default {
 #breadcrumbs li {
   margin-left: 0;
   margin-right: 0;
+}
+
+/* content styling */
+#content li {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.list-group-lg .list-group-item {
+  padding: 2rem 2rem;
+}
+/* // product col styling */
+.list-group-flush-x .list-group-item {
+  padding-left: 0;
+  padding-right: 0;
+  border-left: none;
+  border-right: none;
+}
+.list-group-flush-x .list-group-item:not(:first-child) {
+  border-top: none;
+}
+/* //price col styling */
+.list-group-sm .list-group-item {
+  padding: 1.25rem 1.25rem;
+}
+
+.list-group-flush-y .list-group-item:first-child {
+  padding-top: 0;
+  border-top: none;
+}
+.list-group-flush-y .list-group-item:last-child {
+  border-bottom: none;
+}
+
+/* button styling */
+.btn .fa-arrow-left {
+  transition: all 0.2s ease-in-out;
+  transition-property: transform;
+}
+.btn:hover .fa-arrow-left {
+  transform: translateX(-20%);
+}
+
+/* form styling */
+.form-control-sm {
+  height: calc(1.5em + 1.625rem + 2px);
+  padding: 0.8125rem 1.25rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.form-control#cartCouponCode {
+  outline-color: #111;
+  outline-width: 1px;
+}
+.btn-dark {
+  color: #fff !important;
+}
+.btn-outline-dark {
+  color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+.btn-group-sm > .btn,
+.btn-sm {
+  padding: 0.8125rem 1.5rem;
+  font-size: 0.9375rem;
+  line-height: 1.40625rem;
+  border-radius: 0;
+}
+.btn-group-sm > .btn,
+.btn-sm {
+  height: calc(1.40625rem + 1.625rem + 2px);
+}
+.btn-outline-dark:hover {
+  color: #fff;
+  background-color: #1f1f1f;
+  border-color: #1f1f1f;
+}
+
+/* col styling */
+@media (min-width: 768px) {
+  .col-md-auto {
+    flex: 0 0 auto;
+    width: auto;
+    max-width: 100%;
+  }
+}
+
+/* details of cart styling */
+#productDetail {
+  white-space: pre-line;
 }
 </style>
