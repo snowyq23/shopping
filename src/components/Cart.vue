@@ -80,9 +80,7 @@
             <a class="btn btn-block btn-dark" href="./checkout.html"
               >Continue to Checkout</a
             >
-            <a
-              class="btn btn-block btn-outline-dark"
-              href="./shopping-cart.html"
+            <a class="btn btn-block btn-outline-dark" href="./shopping-cart"
               >View Cart</a
             >
           </div>

@@ -672,7 +672,7 @@ export default {
                 options: [
                   {
                     option: 'Shopping Cart',
-                    href: './shopping-cart.html'
+                    href: './shopping-cart'
                   },
                   {
                     option: 'Checkout',
