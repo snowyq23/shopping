@@ -1,10 +1,7 @@
 <template>
   <div id="classic-info">
     <section id="banner">
-      <v-app
-        class="vuetify-viewport"
-        style="height: 550px; touch-action: pan-y"
-      >
+      <v-app class="slider-viewport" style="height: 550px; touch-action: pan-y">
         <v-carousel hide-delimiters class="vuetify-slider">
           <v-carousel-item
             style="left: 0px; transform: translateX(0%)"
@@ -255,27 +252,44 @@
                   :key="item"
                   transition="fade-transition"
                 >
-                  <v-sheet>
-                    <!-- Slider -->
-                    <v-slide-group
-                      class="vuetify-enabled is-draggable"
-                      show-arrows
+                  <!-- Slider -->
+                  <!-- Previous button -->
+                  <div class="d-flex slider-buttons-lg slider-buttons-offset">
+                    <button
+                      @click.prevent="slidePrev"
+                      class="slider-button slider-prev-next-button previous"
                     >
-                      <!-- Item -->
+                      <i class="fas fa-chevron-left"></i>
+                    </button>
 
-                      <!-- Item -->
+                    <!-- Content -->
+                    <!-- Item -->
 
-                      <!-- Item -->
+                    <!-- Item -->
 
-                      <!-- Item -->
+                    <!-- Item -->
 
-                      <!-- Item -->
+                    <!-- Item -->
 
-                      <!-- Item -->
+                    <!-- Item -->
 
-                      <!-- Item -->
-                      <v-slide-item v-for="(item, i) in categoryWomen" :key="i">
-                        <div class="col" style="max-width: 200px">
+                    <!-- Item -->
+
+                    <!-- Item -->
+                    <hooper
+                      class="slider-viewport"
+                      ref="carousel"
+                      :itemsToShow="4.5"
+                      :infiniteScroll="true"
+                      :wheelControl="false"
+                      :playSpeed="1000"
+                    >
+                      <slide
+                        v-for="(item, i) in categoryWomen"
+                        :key="i"
+                        style="max-width: 200px; margin: 0"
+                      >
+                        <div class="col">
                           <div class="card">
                             <!-- Image -->
                             <img
@@ -301,9 +315,17 @@
                             </div>
                           </div>
                         </div>
-                      </v-slide-item>
-                    </v-slide-group>
-                  </v-sheet>
+                      </slide>
+                    </hooper>
+
+                    <!-- Next button -->
+                    <button
+                      @click.prevent="slideNext"
+                      class="slider-button slider-prev-next-button next"
+                    >
+                      <i class="fas fa-chevron-right"></i>
+                    </button>
+                  </div>
                 </v-tab-item>
               </v-tabs-items>
             </div>
@@ -434,7 +456,7 @@
         <!-- Item -->
 
         <div
-          class="vuetify-viewport"
+          class="slider-viewport"
           style="height: 413.625px; touch-action: pan-y"
         >
           <v-slide-group class="vuetify-slider">
@@ -539,7 +561,7 @@
                 :show-arrows="false"
                 v-model="slide"
               >
-                <div class="vuetify-viewport" style="touch-action: pan-y">
+                <div class="slider-viewport" style="touch-action: pan-y">
                   <!-- Item -->
 
                   <!-- Item -->
@@ -570,7 +592,7 @@
 
               <!-- Slider -->
               <v-carousel id="sliderArrivals" v-model="slide">
-                <div class="vuetify-viewport" style="touch-action: pan-y">
+                <div class="slider-viewport" style="touch-action: pan-y">
                   <!-- Item -->
 
                   <!-- Item -->
@@ -829,8 +851,17 @@
 </template>
 
 <script>
+import { Hooper, Slide } from 'hooper'
+import 'hooper/dist/hooper.css'
+
 export default {
   name: 'BannerClassic',
+
+  components: {
+    Hooper,
+    Slide
+  },
+
   data: () => ({
     tab: null,
     categoryTab: ['Women', 'Men', 'Kids'],
@@ -960,18 +991,27 @@ export default {
       }
     ],
     slide: 0
-  })
+  }),
+
+  methods: {
+    slidePrev() {
+      this.$refs.carousel[0].slidePrev()
+    },
+    slideNext() {
+      this.$refs.carousel[0].slideNext()
+    }
+  }
 }
 </script>
 
 <style scoped>
 /* banner styling */
-.vuetify-viewport {
+.slider-viewport {
   overflow: hidden;
   position: relative;
   height: 100%;
 }
-.vuetify-viewport {
+.slider-viewport {
   cursor: auto !important;
 }
 .vuetify-slider {
@@ -1141,7 +1181,20 @@ export default {
   opacity: 1;
 }
 
-/* #top-category .card-body {
-  position: absolute;
-} */
+/* slider styling */
+.slider-button {
+  transform: translateY(-10%);
+}
+.slider-buttons-lg .slider-button.previous {
+  margin-right: 6rem !important;
+  font-size: 1.5rem;
+}
+.slider-buttons-lg .slider-button.next {
+  margin-left: 6rem !important;
+  font-size: 1.5rem;
+}
+.slider-buttons-lg .slider-button {
+  background-color: transparent;
+  color: #bababa;
+}
 </style>
