@@ -282,7 +282,7 @@
                       :itemsToShow="4.5"
                       :infiniteScroll="true"
                       :wheelControl="false"
-                      :playSpeed="1000"
+                      :transition="600"
                     >
                       <slide
                         v-for="(item, i) in categoryWomen"
@@ -455,18 +455,22 @@
 
         <!-- Item -->
 
-        <div
+        <hooper
           class="slider-viewport"
-          style="height: 413.625px; touch-action: pan-y"
+          ref="carousel"
+          @slide="updateCarousel"
+          :infiniteScroll="true"
+          :itemsToShow="4.5"
+          style="height: 100%"
         >
-          <v-slide-group class="vuetify-slider">
-            <v-slide-item
-              class="col"
-              style="max-width: 300px"
-              aria-hidden="true"
-              v-for="(item, i) in newArrivals"
-              :key="i"
-            >
+          <slide
+            style="max-width: 300px"
+            aria-hidden="true"
+            v-for="(item, i) in newArrivals"
+            :key="i"
+            :initialSlide="i"
+          >
+            <div class="col">
               <div class="card">
                 <!-- Image -->
                 <div class="card-img">
@@ -527,22 +531,28 @@
                   >
                 </div>
               </div>
-            </v-slide-item>
-          </v-slide-group>
+            </div>
+          </slide>
+          <hooper-progress slot="hooper-addons"> </hooper-progress>
+        </hooper>
+        <div class="container">
+          <progress
+            id="progressBar"
+            max="0.7"
+            :value="carouselData"
+            style="margin-left: 200px"
+          >
+            {{ progressBar() }}
+          </progress>
+          <!-- input for check purpose -->
+          <input type="text" id="myValue" value="10" />
         </div>
-        <ol class="flickity-page-dots">
-          <li class="dot" aria-label="Page dot 1"></li>
-          <li class="dot" aria-label="Page dot 2"></li>
-          <li
-            class="dot is-selected"
-            aria-label="Page dot 3"
-            aria-current="step"
-          ></li>
-          <li class="dot" aria-label="Page dot 4"></li>
-          <li class="dot" aria-label="Page dot 5"></li>
-          <li class="dot" aria-label="Page dot 6"></li>
-          <li class="dot" aria-label="Page dot 7"></li>
-        </ol>
+        <!-- input for check purpose -->
+        <input
+          v-model="carouselData"
+          type="number"
+          style="width: 200px; margin-left: 200px"
+        />
       </div>
     </section>
 
@@ -863,6 +873,8 @@ export default {
   },
 
   data: () => ({
+    carouselData: 0,
+    slide: 0,
     tab: null,
     categoryTab: ['Women', 'Men', 'Kids'],
     categoryWomen: [
@@ -989,8 +1001,7 @@ export default {
         discountedPrice: null,
         isSale: false
       }
-    ],
-    slide: 0
+    ]
   }),
 
   methods: {
@@ -999,6 +1010,34 @@ export default {
     },
     slideNext() {
       this.$refs.carousel[0].slideNext()
+    },
+    progressBar: function () {
+      var el = document.getElementById('progressBar')
+      var slide = this.$refs.carousel
+      var len = this.newArrivals.length
+      if (el) {
+        el.addEventListener('click', function (e) {
+          var x = e.pageX - this.offsetLeft
+          // var startPos = document.getElementByld('progressBar').position
+          var xconvert = x / 400
+          var finalx = xconvert.toFixed(1)
+          var current = finalx * 10
+          if (current <= len) {
+            el.value = finalx
+            slide.slideTo(Math.floor(current))
+          } else {
+            el.value = len / 10
+          }
+          document.getElementById('myValue').value = finalx
+        })
+      }
+    },
+    // To update progress bar via slider
+    updateCarousel(payload) {
+      this.carouselData =
+        payload.currentSlide < 0
+          ? (this.newArrivals.length - 1) / 10
+          : payload.currentSlide / 10
     }
   }
 }
