@@ -1014,7 +1014,7 @@ export default {
     progressBar: function () {
       var el = document.getElementById('progressBar')
       var slide = this.$refs.carousel
-      var len = this.newArrivals.length
+      // var len = this.newArrivals.length
       if (el) {
         el.addEventListener('click', function (e) {
           var x = e.pageX - this.offsetLeft
@@ -1022,12 +1022,8 @@ export default {
           var xconvert = x / 400
           var finalx = xconvert.toFixed(1)
           var current = finalx * 10
-          if (current <= len) {
-            el.value = finalx
-            slide.slideTo(Math.floor(current))
-          } else {
-            el.value = len / 10
-          }
+          el.value = finalx
+          slide.slideTo(Math.floor(current))
           document.getElementById('myValue').value = finalx
         })
       }
