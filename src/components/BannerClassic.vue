@@ -461,6 +461,7 @@
           @slide="updateCarousel"
           :infiniteScroll="true"
           :itemsToShow="4.5"
+          :transition="600"
           style="height: 100%"
         >
           <slide
@@ -536,12 +537,7 @@
           <hooper-progress slot="hooper-addons"> </hooper-progress>
         </hooper>
         <div class="container">
-          <progress
-            id="progressBar"
-            max="0.7"
-            :value="carouselData"
-            style="margin-left: 200px"
-          >
+          <progress id="progressBar" max="0.7" :value="carouselData">
             {{ progressBar() }}
           </progress>
           <!-- input for check purpose -->
@@ -1231,5 +1227,13 @@ export default {
 .slider-buttons-lg .slider-button {
   background-color: transparent;
   color: #bababa;
+}
+
+#progressBar {
+  width: 400px;
+  float: left;
+  height: 10px;
+  color: #ff6f61;
+  margin-left: 200px;
 }
 </style>
