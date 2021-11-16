@@ -536,19 +536,11 @@
             </div>
           </slide>
         </hooper>
-        <div class="container">
+        <div class="d-flex justify-content-center">
           <progress id="progressBar" max="100" :value="carouselData">
             {{ progressBar() }}
           </progress>
-          <!-- input for check purpose -->
-          <input type="text" id="myValue" value="10" />
         </div>
-        <!-- input for check purpose -->
-        <input
-          v-model="carouselData"
-          type="number"
-          style="width: 200px; margin-left: 200px"
-        />
       </div>
     </section>
 
@@ -1171,6 +1163,7 @@ export default {
   color: #fff;
 }
 .btn-circle,
+.v-btn-toggle.btn-circle,
 .v-btn-toggle .btn-circle {
   display: inline-flex;
   align-items: center;
@@ -1235,11 +1228,13 @@ export default {
   color: #bababa;
 }
 
+/* progress bar styling */
 #progressBar {
-  width: 400px;
+  width: 100%;
+  max-width: 570px;
   float: left;
   height: 10px;
   color: #ff6f61;
-  margin-left: 200px;
+  cursor: pointer;
 }
 </style>
