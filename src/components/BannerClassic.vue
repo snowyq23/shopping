@@ -479,8 +479,10 @@
                   <!-- Action -->
                   <v-btn-toggle
                     class="btn btn-xs btn-circle card-action card-action-right"
+                    borderless
+                    rounded
                   >
-                    <v-btn class="btn-xs btn-circle btn-white-primary">
+                    <v-btn class="btn-xs btn-circle btn-white-primary" rounded>
                       <i class="fa fa-heart"></i>
                     </v-btn>
                   </v-btn-toggle>
@@ -1142,7 +1144,7 @@ export default {
 }
 
 /* lookbook styling */
-.v-btn-toggle:not(.v-btn-toggle--group) {
+*.v-btn-toggle:not(.v-btn-toggle--group) {
   color: #ff6f61;
 }
 #lookbook .card-action {
