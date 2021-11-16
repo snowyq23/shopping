@@ -1177,6 +1177,10 @@ export default {
 .v-btn-toggle.btn-circle.btn-xs {
   width: calc(1.40625rem + 1rem + 2px);
 }
+
+.v-btn-toggle > .v-btn.v-btn {
+  border-radius: 50%;
+}
 #new-arrivals .card-action {
   position: absolute;
   top: 1.25rem;
