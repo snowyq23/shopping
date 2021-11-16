@@ -460,6 +460,7 @@
           ref="carousel"
           @slide="updateCarousel"
           :infiniteScroll="true"
+          :wheelControl="false"
           :itemsToShow="4.5"
           :transition="600"
           style="height: 100%"
@@ -534,10 +535,9 @@
               </div>
             </div>
           </slide>
-          <hooper-progress slot="hooper-addons"> </hooper-progress>
         </hooper>
         <div class="container">
-          <progress id="progressBar" max="0.7" :value="carouselData">
+          <progress id="progressBar" max="100" :value="carouselData">
             {{ progressBar() }}
           </progress>
           <!-- input for check purpose -->
@@ -1010,26 +1010,32 @@ export default {
     progressBar: function () {
       var el = document.getElementById('progressBar')
       var slide = this.$refs.carousel
-      // var len = this.newArrivals.length
+      var len = this.newArrivals.length
+      var range = Math.floor(100 / len)
       if (el) {
         el.addEventListener('click', function (e) {
-          var x = e.pageX - this.offsetLeft
-          // var startPos = document.getElementByld('progressBar').position
-          var xconvert = x / 400
-          var finalx = xconvert.toFixed(1)
-          var current = finalx * 10
-          el.value = finalx
-          slide.slideTo(Math.floor(current))
+          var percentage = Math.floor((e.offsetX / this.offsetWidth) * 100) // Must put multi 100 in `Math.floor`
+          var slideNo = Math.floor((percentage * len) / 100)
+          var xconvert = (slideNo + 1) * range
+          var finalx = slideNo === len - 1 ? 100 : xconvert
+          el.value = finalx // Update progress bar
+          slide.slideTo(slideNo) // Update slider
           document.getElementById('myValue').value = finalx
         })
       }
     },
     // To update progress bar via slider
     updateCarousel(payload) {
-      this.carouselData =
-        payload.currentSlide < 0
-          ? (this.newArrivals.length - 1) / 10
-          : payload.currentSlide / 10
+      var len = this.newArrivals.length
+      var range = Math.floor(100 / len)
+      var current = payload.currentSlide
+      this.carouselData = current === len - 1 ? 100 : (current + 1) * range // Update progress bar
+      // // Condition to maintain unexpected cases of hooper
+      if (this.carouselData > 100) {
+        this.carouselData = range
+      } else if (this.carouselData === 0) {
+        this.carouselData = 100
+      }
     }
   }
 }
