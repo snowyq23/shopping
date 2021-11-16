@@ -436,10 +436,16 @@
           </div>
         </div>
       </div>
-      <div
-        class="flickity-page-dots-progress flickity-enabled is-draggable"
-        data-flickity='{"pageDots": true}'
-        tabindex="0"
+
+      <hooper
+        class="slider-viewport"
+        ref="carousel"
+        @slide="updateCarousel"
+        :infiniteScroll="true"
+        :wheelControl="false"
+        :itemsToShow="4.5"
+        :transition="600"
+        style="height: 100%"
       >
         <!-- Item -->
 
@@ -454,96 +460,87 @@
         <!-- Item -->
 
         <!-- Item -->
-
-        <hooper
-          class="slider-viewport"
-          ref="carousel"
-          @slide="updateCarousel"
-          :infiniteScroll="true"
-          :wheelControl="false"
-          :itemsToShow="4.5"
-          :transition="600"
-          style="height: 100%"
+        <slide
+          style="max-width: 300px"
+          aria-hidden="true"
+          v-for="(item, i) in newArrivals"
+          :key="i"
+          :initialSlide="i"
         >
-          <slide
-            style="max-width: 300px"
-            aria-hidden="true"
-            v-for="(item, i) in newArrivals"
-            :key="i"
-            :initialSlide="i"
-          >
-            <div class="col">
-              <div class="card">
+          <div class="col">
+            <div class="card">
+              <!-- Image -->
+              <div class="card-img">
+                <!-- Action -->
+                <v-btn-toggle
+                  class="btn btn-xs btn-circle card-action card-action-right"
+                  color="#ff6f61"
+                  borderless
+                  rounded
+                >
+                  <v-btn class="btn-xs btn-circle btn-white-primary" icon>
+                    <i class="fa fa-heart"></i>
+                  </v-btn>
+                </v-btn-toggle>
+
+                <!-- Badge -->
+                <span
+                  class="
+                    badge badge-dark
+                    card-badge card-badge-left
+                    text-uppercase
+                  "
+                  v-if="item.isSale"
+                >
+                  Sale
+                </span>
+
+                <!-- Button -->
+                <button
+                  class="btn btn-xs btn-block btn-dark card-btn"
+                  data-toggle="modal"
+                  data-target="#modalProduct"
+                >
+                  <i class="fa fa-eye mr-2 mb-1"></i> Quick View
+                </button>
+
                 <!-- Image -->
-                <div class="card-img">
-                  <!-- Action -->
-                  <v-btn-toggle
-                    class="btn btn-xs btn-circle card-action card-action-right"
-                    color="#ff6f61"
-                    borderless
-                    rounded
-                  >
-                    <v-btn class="btn-xs btn-circle btn-white-primary" icon>
-                      <i class="fa fa-heart"></i>
-                    </v-btn>
-                  </v-btn-toggle>
+                <img
+                  class="card-img-top"
+                  :src="require(`@/assets/img/products/${item.image}.jpg`)"
+                  alt="..."
+                />
+              </div>
 
-                  <!-- Badge -->
-                  <span
-                    class="
-                      badge badge-dark
-                      card-badge card-badge-left
-                      text-uppercase
-                    "
-                    v-if="item.isSale"
-                  >
-                    Sale
-                  </span>
-
-                  <!-- Button -->
-                  <button
-                    class="btn btn-xs btn-block btn-dark card-btn"
-                    data-toggle="modal"
-                    data-target="#modalProduct"
-                  >
-                    <i class="fa fa-eye mr-2 mb-1"></i> Quick View
-                  </button>
-
-                  <!-- Image -->
-                  <img
-                    class="card-img-top"
-                    :src="require(`@/assets/img/products/${item.image}.jpg`)"
-                    alt="..."
-                  />
-                </div>
-
-                <!-- Body -->
-                <div class="card-body font-weight-bold text-center">
-                  <a class="text-body" :href="item.url">{{ item.name }}</a>
-                  <br />
-                  <span
-                    class="
-                      font-size-xs
-                      text-gray-350 text-decoration-line-through
-                    "
-                    >{{ item.retailPrice }}</span
-                  >
-                  <span
-                    class="text-primary"
-                    v-if="item.discountedPrice !== null"
-                  >
-                    {{ item.discountedPrice }}</span
-                  >
-                </div>
+              <!-- Body -->
+              <div class="card-body font-weight-bold text-center">
+                <a class="text-body" :href="item.url">{{ item.name }}</a>
+                <br />
+                <span
+                  class="
+                    font-size-xs
+                    text-gray-350 text-decoration-line-through
+                  "
+                  >{{ item.retailPrice }}</span
+                >
+                <span class="text-primary" v-if="item.discountedPrice !== null">
+                  {{ item.discountedPrice }}</span
+                >
               </div>
             </div>
-          </slide>
-        </hooper>
-        <div class="d-flex justify-content-center">
-          <progress id="progressBar" max="100" :value="carouselData">
-            {{ progressBar() }}
-          </progress>
-        </div>
+          </div>
+        </slide>
+      </hooper>
+      <div class="d-flex justify-content-center">
+        <v-progress-linear
+          id="progressBar"
+          buffer-value="100"
+          :value="carouselData"
+          color="#ff6f61"
+          background-color="#e5e5e5"
+        >
+          {{ progressBar() }}
+        </v-progress-linear>
       </div>
     </section>
 
@@ -1237,8 +1234,10 @@ export default {
   width: 100%;
   max-width: 570px;
   float: left;
-  height: 10px;
-  color: #ff6f61;
+  height: 0.25rem;
   cursor: pointer;
+  position: relative;
+  bottom: 0;
+  margin-top: 3rem;
 }
 </style>
