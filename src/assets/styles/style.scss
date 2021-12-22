@@ -839,6 +839,11 @@ img {
   max-width: 100%;
 }
 @media (min-width: 768px) {
+  .col-md {
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+  }
   .col-md-5 {
     flex: 0 0 41.66667%;
     max-width: 41.66667%;
@@ -849,6 +854,9 @@ img {
   }
   .d-md-block {
     display: block !important;
+  }
+  .d-md-flex {
+    display: flex !important;
   }
 }
 @media (min-width: 992px) {

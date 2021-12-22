@@ -43,8 +43,13 @@
               </div>
 
               <!-- OF `Catalog` -->
-              <div class="dropdown-menu w-100" v-if="item.text === 'Catalog'">
-                <div class="card card-lg">
+              <div
+                class="dropdown-menu w-100"
+                v-if="item.text === 'Catalog'"
+                id="catalogTab"
+                style="width: 700%"
+              >
+                <div class="card card-lg" style="width: 700%; z-index: 1000">
                   <div class="card-body">
                     <div class="container">
                       <div class="row">
@@ -80,13 +85,19 @@
                             <!-- Background -->
                             <div class="card-bg">
                               <div
-                                class="card-bg-img bg-cover"
                                 :style="{
                                   'background-image': `url(${require('@/assets/img/products/product-2.jpg')})`,
                                   height: '100%',
                                   width: '100%'
                                 }"
-                              ></div>
+                              >
+                                <img
+                                  class="card-bg-img bg-cover"
+                                  :src="
+                                    require('@/assets/img/products/product-2.jpg')
+                                  "
+                                />
+                              </div>
                             </div>
 
                             <!-- Body -->
@@ -109,11 +120,19 @@
                             <!-- Background -->
                             <div class="card-bg">
                               <div
-                                class="card-bg-img bg-cover"
-                                style="
-                                  background-image: url(assets/img/products/product-3.jpg);
-                                "
-                              ></div>
+                                :style="{
+                                  'background-image': `url(${require('@/assets/img/products/product-3.jpg')})`,
+                                  height: '100%',
+                                  width: '100%'
+                                }"
+                              >
+                                <img
+                                  class="card-bg-img bg-cover"
+                                  :src="
+                                    require('@/assets/img/products/product-3.jpg')
+                                  "
+                                />
+                              </div>
                             </div>
 
                             <!-- Body -->
@@ -138,10 +157,18 @@
                             <div class="card-bg">
                               <div
                                 class="card-bg-img bg-cover"
-                                style="
-                                  background-image: url(@/assets/img/products/product-111.jpg);
-                                "
-                              ></div>
+                                :style="{
+                                  'background-image': `url(${require('@/assets/img/products/product-111.jpg')})`,
+                                  height: '100%'
+                                }"
+                              >
+                                <!-- <img
+                                  class="card-bg-img bg-cover"
+                                  :src="
+                                    require('@/assets/img/products/product-111.jpg')
+                                  "
+                                /> -->
+                              </div>
                             </div>
 
                             <!-- Body -->
@@ -488,7 +515,7 @@ export default {
             ]
           }
         ],
-        isStatic: true
+        isStatic: false
       },
       {
         link: '#!',
@@ -753,5 +780,33 @@ ul.navbar-nav {
 .navbar-light .navbar-nav .nav-link:focus,
 .navbar-light .navbar-nav .nav-link:hover {
   color: #ff6f61;
+}
+
+@media (min-width: 1200px) {
+  .navbar-nav .dropdown:hover > #catalogTab.dropdown-menu,
+  .navbar-nav .dropright:hover > #catalogTab.dropdown-menu {
+    display: block !important;
+    visibility: show;
+    transform-origin: top center;
+    opacity: 1;
+    z-index: 1000;
+  }
+}
+
+/* column */
+/* .col-4 {
+  flex: 0 0 33.33333%;
+  max-width: 33.33333%;
+} */
+/* .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -1rem;
+  margin-left: -1rem;
+} */
+
+#top-nav-classic .card-bg:hover .card-bg-img {
+  /* left: -10px; */
+  width: calc(100%);
 }
 </style>

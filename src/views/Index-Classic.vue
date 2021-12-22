@@ -14,15 +14,35 @@
         </div>
       </div>
     </div>
+
     <top-nav-classic />
-    <banner-classic />
+
+    <banner />
+    <top-category />
+    <category-list />
+    <top-product />
+    <new-arrivals />
+    <lookbook />
+    <!-- <banner-classic /> -->
+
+    <blog />
+    <features />
     <bottom-navigation />
   </div>
 </template>
 
 <script>
 import TopNavClassic from '../components/TopNavClassic'
-import BannerClassic from '../components/BannerClassic'
+// import BannerClassic from '../components/BannerClassic'
+import Banner from '../components/Banner'
+import TopCategory from '../components/TopCategory'
+import CategoryList from '../components/CategoryList'
+import TopProduct from '../components/TopProduct'
+import NewArrivals from '../components/NewArrivals'
+import Lookbook from '../components/Lookbook'
+
+import Blog from '../components/Blog'
+import Features from '../components/Features'
 import BottomNavigation from '../components/BottomNavigation'
 
 export default {
@@ -30,7 +50,14 @@ export default {
   data: () => ({}),
   components: {
     TopNavClassic,
-    BannerClassic,
+    Banner,
+    TopCategory,
+    CategoryList,
+    TopProduct,
+    NewArrivals,
+    Lookbook,
+    Blog,
+    Features,
     BottomNavigation
   }
 }
@@ -41,6 +68,10 @@ export default {
   transition: opacity 0.2s ease-in-out;
 }
 
+/* background overlay */
+.card-bg ~ * {
+  z-index: 1;
+}
 .card-bg {
   position: absolute;
   top: 0;
@@ -58,9 +89,6 @@ export default {
   display: inline-block;
   transition: all 0.5s ease-in-out;
   transition-property: transform;
-}
-.card:hover .card-bg-img {
-  transform: translateX(-0.5rem);
 }
 
 .container {
@@ -114,15 +142,6 @@ export default {
   color: #fff;
   background-color: #1f1f1f;
   border-color: #1f1f1f;
-}
-
-#lookbook .v-application {
-  max-height: 650px;
-}
-#lookbook .v-application a {
-  text-decoration: none;
-  color: #111;
-  background-color: transparent;
 }
 
 /* Column styling */
@@ -217,5 +236,47 @@ export default {
   #category-list #topSellersTab .v-slide-group__next {
     margin-left: 6rem !important;
   }
+}
+
+/* feautures styling */
+#features.bg-light {
+  background-color: #fff !important;
+}
+
+/* button styling */
+.btn-link {
+  font-weight: 500;
+  color: #111;
+}
+.btn-xs {
+  height: calc(1.40625rem + 1rem + 2px);
+  padding: 0.5rem 0.75rem;
+  font-size: 0.9375rem;
+}
+.card-btn {
+  position: absolute;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+.card-img:hover .card-btn {
+  opacity: 1;
+}
+
+.position-static {
+  position: static !important;
+}
+
+/* navigation router */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.nav-link.active:focus,
+.nav-link.active:hover {
+  color: #ff6f61;
 }
 </style>

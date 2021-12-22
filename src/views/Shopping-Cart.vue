@@ -185,7 +185,7 @@ import Features from '../components/Features.vue'
 import BottomNavigation from '../components/BottomNavigation.vue'
 
 export default {
-  name: 'Cart',
+  name: 'Shopping-Cart',
   data: () => ({
     breadcrumbs: [
       {
