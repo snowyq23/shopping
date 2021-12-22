@@ -845,6 +845,9 @@ export default {
 </script>
 
 <style scoped>
+.dropdown-menu {
+  top: 60%;
+}
 .navbar {
   position: relative;
   display: flex;

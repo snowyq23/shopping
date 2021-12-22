@@ -47,7 +47,6 @@
                 class="dropdown-menu w-100"
                 v-if="item.text === 'Catalog'"
                 id="catalogTab"
-                style="width: 700%"
               >
                 <div class="card card-lg" style="width: 700%; z-index: 1000">
                   <div class="card-body">
@@ -85,19 +84,11 @@
                             <!-- Background -->
                             <div class="card-bg">
                               <div
+                                class="card-bg-img bg-cover"
                                 :style="{
-                                  'background-image': `url(${require('@/assets/img/products/product-2.jpg')})`,
-                                  height: '100%',
-                                  width: '100%'
+                                  'background-image': `url(${require('@/assets/img/products/product-2.jpg')})`
                                 }"
-                              >
-                                <img
-                                  class="card-bg-img bg-cover"
-                                  :src="
-                                    require('@/assets/img/products/product-2.jpg')
-                                  "
-                                />
-                              </div>
+                              ></div>
                             </div>
 
                             <!-- Body -->
@@ -120,19 +111,11 @@
                             <!-- Background -->
                             <div class="card-bg">
                               <div
+                                class="card-bg-img bg-cover"
                                 :style="{
-                                  'background-image': `url(${require('@/assets/img/products/product-3.jpg')})`,
-                                  height: '100%',
-                                  width: '100%'
+                                  'background-image': `url(${require('@/assets/img/products/product-3.jpg')})`
                                 }"
-                              >
-                                <img
-                                  class="card-bg-img bg-cover"
-                                  :src="
-                                    require('@/assets/img/products/product-3.jpg')
-                                  "
-                                />
-                              </div>
+                              ></div>
                             </div>
 
                             <!-- Body -->
@@ -161,14 +144,7 @@
                                   'background-image': `url(${require('@/assets/img/products/product-111.jpg')})`,
                                   height: '100%'
                                 }"
-                              >
-                                <!-- <img
-                                  class="card-bg-img bg-cover"
-                                  :src="
-                                    require('@/assets/img/products/product-111.jpg')
-                                  "
-                                /> -->
-                              </div>
+                              ></div>
                             </div>
 
                             <!-- Body -->
@@ -805,8 +781,23 @@ ul.navbar-nav {
   margin-left: -1rem;
 } */
 
-#top-nav-classic .card-bg:hover .card-bg-img {
+.card-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% + 0.25rem);
+  height: 100%;
+  display: inline-block;
+  transition: all 0.5s ease-in-out;
+  transition-property: transform;
+}
+#top-nav-classic .bg-cover:hover .card-bg-img {
   /* left: -10px; */
   width: calc(100%);
+}
+
+#catalogTab.dropdown-menu {
+  left: -110%;
+  width: 700%;
 }
 </style>
