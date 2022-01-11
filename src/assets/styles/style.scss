@@ -1091,6 +1091,12 @@ ul.navbar-nav {
 }
 
 // default form
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -10px;
+  margin-left: -10px;
+}
 .form-row > .col,
 .form-row > [class*='col-'] {
   padding-right: 10px;
@@ -1117,4 +1123,171 @@ ul.navbar-nav {
   background-clip: border-box;
   transition: all 0.1s ease-in-out;
   transition-property: border;
+}
+
+// default table
+.table-responsive {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.table-bordered {
+  border: 1px solid #e5e5e5;
+}
+.table-responsive > .table-bordered {
+  border: 0;
+}
+table {
+  display: table;
+  border-collapse: separate;
+  box-sizing: border-box;
+  text-indent: initial;
+  border-spacing: 2px;
+  border-color: gray;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.table {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  color: #111;
+}
+
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+td {
+  display: table-cell;
+  vertical-align: inherit;
+}
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+.table td,
+.table th {
+  padding: 1.5rem;
+  vertical-align: top;
+  border-top: 1px solid #e5e5e5;
+}
+
+.table-sm td,
+.table-sm th {
+  padding: 1.25rem;
+}
+
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid #e5e5e5;
+}
+
+.table tbody td,
+.table tbody th {
+  transition: all 0.1s ease-in-out;
+}
+
+.table-sm tbody td {
+  font-size: 0.9375rem;
+}
+
+// default radio / check button
+.custom-control {
+  position: relative;
+  display: block;
+  min-height: 1.5rem;
+  padding-left: 2rem;
+}
+
+.custom-control {
+  padding-left: 0;
+}
+
+button,
+input {
+  overflow: visible;
+}
+
+.custom-control-input {
+  position: absolute;
+  left: 0;
+  z-index: -1;
+  width: 1.125rem;
+  height: 1.3125rem;
+  opacity: 1;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+// default label
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+.custom-control-label {
+  position: relative;
+  margin-bottom: 0;
+  color: #767676;
+  vertical-align: top;
+}
+.text-nowrap {
+  white-space: nowrap !important;
+}
+.text-body {
+  color: #111 !important;
+}
+.custom-control .custom-control-label {
+  color: #767676;
+  cursor: pointer;
+}
+.custom-checkbox .custom-control-label,
+.custom-radio .custom-control-label {
+  padding-left: 2rem;
+}
+
+// .custom-control-label::before {
+//   position: absolute;
+//   top: 0.1875rem;
+//   left: -2rem;
+//   display: block;
+//   width: 1.125rem;
+//   height: 1.125rem;
+//   pointer-events: none;
+//   content: '';
+//   background-color: #e5e5e5;
+//   border: #525252 solid 0;
+// }
+.custom-control-label::before,
+.custom-file-label,
+.custom-select {
+  transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out,
+    box-shadow 0.15s ease-in-out;
+}
+.custom-radio .custom-control-label::before {
+  border-radius: 50%;
+}
+.custom-control .custom-control-label::after,
+.custom-control .custom-control-label::before {
+  top: calc((1em * 1.5 - 1.125rem) / 2);
+}
+.custom-checkbox .custom-control-label::after,
+.custom-checkbox .custom-control-label::before,
+.custom-radio .custom-control-label::after,
+.custom-radio .custom-control-label::before {
+  left: 0;
 }

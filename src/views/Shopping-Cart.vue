@@ -238,6 +238,7 @@ export default {
 </script>
 
 <style>
+/* container styling */
 .container {
   width: 100%;
   padding-right: 1rem;
