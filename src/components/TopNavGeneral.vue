@@ -676,7 +676,7 @@ export default {
                   },
                   {
                     option: 'Checkout',
-                    href: './checkout.html'
+                    href: './checkout'
                   },
 
                   {

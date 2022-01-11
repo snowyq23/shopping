@@ -494,7 +494,7 @@ export default {
       {
         text: 'Classic',
         disabled: false,
-        href: 'index-classic.html'
+        href: 'index-classic'
       },
       {
         text: 'Shopping Cart',
@@ -504,7 +504,7 @@ export default {
       {
         text: 'Checkout',
         disabled: true,
-        href: 'checkout.html'
+        href: 'checkout'
       }
     ],
     cart: [

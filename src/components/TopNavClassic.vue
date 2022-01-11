@@ -365,7 +365,7 @@ export default {
         text: 'Home',
         list: [
           { option: 'Default', href: './index.html' },
-          { option: 'Classic', href: './index-classic.html' },
+          { option: 'Classic', href: './index-classic' },
           { option: 'Fashion', href: './index-fashion.html' },
           { option: 'Boxed', href: './index-boxed.html' },
           { option: 'Simple', href: './index-simple.html' },
@@ -564,7 +564,7 @@ export default {
                   },
                   {
                     option: 'Checkout',
-                    href: './checkout.html'
+                    href: './checkout'
                   },
 
                   {

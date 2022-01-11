@@ -158,7 +158,7 @@
             </div>
 
             <!-- Button -->
-            <a class="btn btn-block btn-dark mb-2" href="checkout.html"
+            <a class="btn btn-block btn-dark mb-2" href="checkout"
               >Proceed to Checkout</a
             >
 
@@ -191,7 +191,7 @@ export default {
       {
         text: 'Classic',
         disabled: false,
-        href: 'index-classic.html'
+        href: 'index-classic'
       },
       {
         text: 'Shopping Cart',

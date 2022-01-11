@@ -77,7 +77,7 @@
 
           <!-- Buttons -->
           <div class="modal-body">
-            <a class="btn btn-block btn-dark" href="./checkout.html"
+            <a class="btn btn-block btn-dark" href="./checkout"
               >Continue to Checkout</a
             >
             <a class="btn btn-block btn-outline-dark" href="./shopping-cart"
